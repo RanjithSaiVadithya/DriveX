@@ -1,0 +1,7 @@
+{
+  "name": "drivex-mock-server",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  }
+}
