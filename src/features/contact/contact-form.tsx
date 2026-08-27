@@ -75,7 +75,7 @@ export function ContactForm() {
         </p>
       ) : null}
       <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={submitting}>
-        {submitting ? "Sending…" : "Send message"}
+        {submitting ? "Sending…" : "Send Message"}
       </Button>
     </form>
   );

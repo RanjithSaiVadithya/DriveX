@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Geist_Mono } from "next/font/google";
+import { Caveat, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import { Providers } from "@/components/shared/providers";
 import { PlatformChrome } from "@/components/shared/platform-chrome";
 import { Toaster } from "@/components/ui/sonner";
@@ -8,10 +8,16 @@ import { env } from "@/lib/env";
 import { APP_VERSION } from "@/lib/app-version";
 import "./globals.css";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
 });
 
 const geistMono = Geist_Mono({
@@ -21,8 +27,8 @@ const geistMono = Geist_Mono({
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#5c6b3a" },
-    { media: "(prefers-color-scheme: dark)", color: "#0f2744" },
+    { media: "(prefers-color-scheme: light)", color: "#2d5a27" },
+    { media: "(prefers-color-scheme: dark)", color: "#121a1f" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -88,7 +94,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${plusJakarta.variable} ${caveat.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
         <Providers>

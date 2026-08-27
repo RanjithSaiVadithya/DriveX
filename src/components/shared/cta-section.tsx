@@ -23,7 +23,7 @@ export function CTASection({
     <section
       className={cn(
         "py-16 sm:py-20",
-        navy ? "bg-deep-navy text-warm-white" : "bg-warm-beige/50",
+        navy ? "bg-deep-navy text-warm-white" : "bg-cream",
         className,
       )}
     >
@@ -33,7 +33,7 @@ export function CTASection({
           <p
             className={cn(
               "mx-auto mt-3 max-w-xl text-base",
-              navy ? "text-warm-beige/90" : "text-muted-foreground",
+              navy ? "text-white/75" : "text-muted-foreground",
             )}
           >
             {description}
@@ -56,7 +56,7 @@ export function CTASection({
                 buttonVariants({ variant: "outline", size: "lg" }),
                 "w-full sm:w-auto",
                 navy &&
-                  "border-warm-white/30 bg-transparent text-warm-white hover:bg-white/10",
+                  "border-white/25 bg-transparent text-warm-white hover:bg-white/10",
               )}
             >
               {secondary.label}

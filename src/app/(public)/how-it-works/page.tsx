@@ -39,7 +39,7 @@ export default function HowItWorksPage() {
     <main>
       <section className="border-b border-border/70 bg-warm-white py-16 sm:py-20">
         <PageContainer className="max-w-3xl">
-          <p className="text-caption font-semibold uppercase tracking-wider text-orange">
+          <p className="text-caption font-semibold uppercase tracking-wider text-olive">
             How it works
           </p>
           <h1 className="text-h1 mt-3">One platform, two perspectives</h1>
@@ -58,9 +58,9 @@ export default function HowItWorksPage() {
               {userSteps.map((step, index) => (
                 <li
                   key={step}
-                  className="flex items-start gap-3 rounded-lg border border-border bg-warm-white p-4"
+                  className="flex items-start gap-3 rounded-2xl border border-border bg-warm-white p-4 shadow-soft"
                 >
-                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-olive/15 text-sm font-bold text-olive">
+                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-olive text-sm font-bold text-white">
                     {index + 1}
                   </span>
                   <span className="pt-1 font-medium text-deep-navy">{step}</span>
@@ -77,9 +77,9 @@ export default function HowItWorksPage() {
               {driverSteps.map((step, index) => (
                 <li
                   key={step}
-                  className="flex items-start gap-3 rounded-lg border border-border bg-cream/70 p-4"
+                  className="flex items-start gap-3 rounded-2xl border border-border bg-cream p-4"
                 >
-                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-orange/15 text-sm font-bold text-orange">
+                  <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-deep-navy text-sm font-bold text-white">
                     {index + 1}
                   </span>
                   <span className="pt-1 font-medium text-deep-navy">{step}</span>

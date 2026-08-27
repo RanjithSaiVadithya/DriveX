@@ -4,19 +4,20 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* DriveX design tokens — cream / navy / olive / orange (LOCKED) */
+/* DriveX design tokens — white / forest green / charcoal */
 :root {
-  --cream: #f7f3eb;
-  --warm-white: #fffdf8;
-  --deep-navy: #0f2744;
-  --olive: #5c6b3a;
-  --olive-hover: #4d5a31;
-  --orange: #e0783a;
-  --orange-hover: #c9652c;
-  --warm-beige: #e8dcc8;
-  --near-black: #141210;
-  --muted-gray: #6b6560;
+  --cream: #f5f7f5;
+  --warm-white: #ffffff;
+  --deep-navy: #121a1f;
+  --olive: #2d5a27;
+  --olive-hover: #244a1f;
+  --orange: #2d5a27;
+  --orange-hover: #244a1f;
+  --warm-beige: #e6ece4;
+  --near-black: #0e1418;
+  --muted-gray: #5c6560;
   --white: #ffffff;
+  --hero-circle: #e8e4d9;
 
   --background: var(--cream);
   --foreground: var(--near-black);
@@ -28,32 +29,31 @@
   --primary-foreground: var(--warm-white);
   --secondary: var(--warm-beige);
   --secondary-foreground: var(--deep-navy);
-  --muted: #efe8dc;
+  --muted: #ebf0eb;
   --muted-foreground: var(--muted-gray);
-  --accent: var(--orange);
+  --accent: var(--olive);
   --accent-foreground: var(--warm-white);
   --destructive: #b42318;
-  --border: #ddd2c0;
-  --input: #ddd2c0;
+  --border: #d7dfd6;
+  --input: #d7dfd6;
   --ring: var(--olive);
   --chart-1: var(--deep-navy);
   --chart-2: var(--olive);
-  --chart-3: var(--orange);
+  --chart-3: #4a8a42;
   --chart-4: var(--warm-beige);
   --chart-5: var(--muted-gray);
-  --radius: 0.625rem;
-  --shadow-soft: 0 1px 2px rgb(20 18 16 / 0.06);
-  --shadow-medium: 0 8px 24px rgb(15 39 68 / 0.08);
+  --radius: 0.75rem;
+  --shadow-soft: 0 1px 3px rgb(18 26 31 / 0.06);
+  --shadow-medium: 0 12px 32px rgb(18 26 31 / 0.1);
   --sidebar: var(--deep-navy);
   --sidebar-foreground: var(--warm-white);
   --sidebar-primary: var(--olive);
   --sidebar-primary-foreground: var(--warm-white);
-  --sidebar-accent: #1a3558;
+  --sidebar-accent: #1c272e;
   --sidebar-accent-foreground: var(--warm-white);
-  --sidebar-border: #1a3558;
-  --sidebar-ring: var(--orange);
+  --sidebar-border: #1c272e;
+  --sidebar-ring: var(--olive);
 
-  /* Typography scale (rem) */
   --text-display: 3.5rem;
   --text-h1: 2.5rem;
   --text-h2: 2rem;
@@ -78,11 +78,13 @@
   --color-warm-beige: var(--warm-beige);
   --color-near-black: var(--near-black);
   --color-muted-gray: var(--muted-gray);
+  --color-hero-circle: var(--hero-circle);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-dm-sans);
+  --font-sans: var(--font-plus-jakarta);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-dm-sans);
+  --font-heading: var(--font-plus-jakarta);
+  --font-accent: var(--font-caveat);
   --shadow-soft: var(--shadow-soft);
   --shadow-medium: var(--shadow-medium);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -170,6 +172,10 @@
     color: var(--deep-navy);
   }
 
+  .font-accent {
+    font-family: var(--font-caveat), cursive;
+  }
+
   .text-small {
     font-size: var(--text-small);
     line-height: 1.5;
@@ -210,6 +216,9 @@
   .animate-slide-up {
     animation: drivex-slide-up 0.55s ease-out both;
   }
+  .animate-float {
+    animation: drivex-float 5s ease-in-out infinite;
+  }
 }
 
 @keyframes drivex-fade-in {
@@ -229,5 +238,15 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes drivex-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
   }
 }

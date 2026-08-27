@@ -7,7 +7,7 @@ import { publicContent } from "@/config/content";
 import { buildPageMetadata } from "@/lib/seo";
 import { authRoutes, publicRoutes } from "@/config/routes";
 import { cn } from "@/lib/utils";
-import { Clock3, FileCheck2, HandCoins, Headset } from "lucide-react";
+import { Check, Clock3, FileCheck2, HandCoins, Headset } from "lucide-react";
 
 export const metadata = buildPageMetadata({
   title: { absolute: "Drive With DriveX — Earn on Your Schedule" },
@@ -23,18 +23,43 @@ export default function DriveWithUsPage() {
   return (
     <main>
       <section className="border-b border-border/70 bg-deep-navy py-16 text-warm-white sm:py-20">
-        <PageContainer className="max-w-3xl">
-          <p className="text-caption font-semibold uppercase tracking-wider text-orange">
-            Drive with us
-          </p>
-          <h1 className="text-h1 mt-3 text-warm-white">{driveWithUs.heroTitle}</h1>
-          <p className="mt-5 text-lg text-warm-beige/90">{driveWithUs.heroDescription}</p>
-          <Link
-            href={`${authRoutes.signup}?role=driver`}
-            className={cn(buttonVariants({ variant: "default", size: "lg" }), "mt-8 inline-flex")}
+        <PageContainer className="grid items-center gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-caption font-semibold uppercase tracking-wider text-olive">
+              Drive with us
+            </p>
+            <h1 className="text-h1 mt-3 text-warm-white">{driveWithUs.heroTitle}</h1>
+            <p className="mt-5 text-lg text-white/75">{driveWithUs.heroDescription}</p>
+            <ul className="mt-6 space-y-3">
+              {publicContent.driverRecruit.points.map((point) => (
+                <li key={point} className="flex items-center gap-3 text-sm text-white/90">
+                  <span className="inline-flex size-6 items-center justify-center rounded-full bg-olive text-white">
+                    <Check className="size-3.5" strokeWidth={3} aria-hidden />
+                  </span>
+                  {point}
+                </li>
+              ))}
+            </ul>
+            <Link
+              href={`${authRoutes.signup}?role=driver`}
+              className={cn(
+                buttonVariants({ variant: "default", size: "lg" }),
+                "mt-8 inline-flex",
+              )}
+            >
+              {driveWithUs.cta}
+            </Link>
+          </div>
+          <div
+            className="relative min-h-[16rem] overflow-hidden rounded-3xl bg-[#1c272e]"
+            aria-hidden
           >
-            {driveWithUs.cta}
-          </Link>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(45,90,39,0.4),transparent_50%)]" />
+            <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-warm-white p-5 text-deep-navy shadow-medium">
+              <p className="text-caption font-semibold uppercase text-olive">Earnings</p>
+              <p className="mt-1 text-2xl font-bold">Flexible hours · Clear payouts</p>
+            </div>
+          </div>
         </PageContainer>
       </section>
 
@@ -54,14 +79,19 @@ export default function DriveWithUsPage() {
         </PageContainer>
       </section>
 
-      <section className="bg-warm-beige/40 py-16 sm:py-20">
+      <section className="bg-cream py-16 sm:py-20">
         <PageContainer className="grid gap-10 lg:grid-cols-2">
           <div>
             <h2 className="text-h2">How onboarding works</h2>
             <ol className="mt-6 space-y-3">
               {driveWithUs.onboarding.map((step, index) => (
-                <li key={step} className="flex gap-3 text-deep-navy">
-                  <span className="font-bold text-olive">{index + 1}.</span>
+                <li
+                  key={step}
+                  className="flex items-center gap-3 rounded-2xl border border-border bg-warm-white px-4 py-3 text-deep-navy"
+                >
+                  <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-olive text-xs font-bold text-white">
+                    {index + 1}
+                  </span>
                   {step}
                 </li>
               ))}
@@ -73,7 +103,7 @@ export default function DriveWithUsPage() {
               {driveWithUs.requirements.map((item) => (
                 <li
                   key={item}
-                  className="rounded-lg border border-border bg-warm-white px-4 py-3 text-sm font-medium text-deep-navy"
+                  className="rounded-2xl border border-border bg-warm-white px-4 py-3 text-sm font-medium text-deep-navy"
                 >
                   {item}
                 </li>

@@ -3,6 +3,7 @@ import { CTASection } from "@/components/shared/cta-section";
 import { publicContent } from "@/config/content";
 import { buildPageMetadata } from "@/lib/seo";
 import { authRoutes, publicRoutes } from "@/config/routes";
+import { ShieldCheck } from "lucide-react";
 
 export const metadata = buildPageMetadata({
   title: { absolute: "DriveX Safety — Safe and Reliable Rides" },
@@ -39,7 +40,8 @@ export default function SafetyPage() {
     <main>
       <section className="border-b border-border/70 bg-warm-white py-16 sm:py-20">
         <PageContainer className="max-w-3xl">
-          <p className="text-caption font-semibold uppercase tracking-wider text-orange">
+          <p className="inline-flex items-center gap-2 text-caption font-semibold uppercase tracking-wider text-olive">
+            <ShieldCheck className="size-4" aria-hidden />
             Safety
           </p>
           <h1 className="text-h1 mt-3">Safety built into the product foundation</h1>
@@ -60,7 +62,7 @@ export default function SafetyPage() {
             {publicContent.safetyHighlights.map((item) => (
               <article
                 key={item.title}
-                className="rounded-xl border border-border bg-warm-white p-6 shadow-soft"
+                className="rounded-2xl border border-border bg-warm-white p-6 shadow-soft"
               >
                 <h2 className="text-lg font-semibold text-deep-navy">{item.title}</h2>
                 <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
@@ -74,7 +76,10 @@ export default function SafetyPage() {
         <PageContainer className="max-w-3xl space-y-6">
           <h2 className="text-h2">Practices and expectations</h2>
           {practices.map((item) => (
-            <article key={item.title}>
+            <article
+              key={item.title}
+              className="rounded-2xl border border-border/70 bg-warm-white p-5"
+            >
               <h3 className="text-h3">{item.title}</h3>
               <p className="mt-2 text-muted-foreground">{item.body}</p>
             </article>

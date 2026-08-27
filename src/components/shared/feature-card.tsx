@@ -15,12 +15,12 @@ export function FeatureCard({
   return (
     <article
       className={cn(
-        "rounded-xl border border-border/80 bg-warm-white p-6 shadow-soft transition-shadow hover:shadow-medium",
+        "rounded-2xl border border-border/70 bg-warm-white p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-medium",
         className,
       )}
     >
-      <div className="flex size-11 items-center justify-center rounded-lg bg-olive/10 text-olive">
-        <Icon className="size-5" aria-hidden />
+      <div className="flex size-12 items-center justify-center rounded-full bg-olive/10 text-olive">
+        <Icon className="size-5" strokeWidth={1.75} aria-hidden />
       </div>
       <h3 className="mt-4 text-lg font-semibold text-deep-navy">{title}</h3>
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
@@ -40,14 +40,12 @@ export function StatCard({
   return (
     <div
       className={cn(
-        "rounded-xl border border-border/80 bg-warm-white p-5 shadow-soft",
+        "rounded-2xl border border-border/70 bg-warm-white p-5 text-center shadow-soft",
         className,
       )}
     >
-      <p className="text-caption font-medium uppercase tracking-wide text-muted-foreground">
-        {label}
-      </p>
-      <p className="mt-2 text-2xl font-bold text-deep-navy">{value}</p>
+      <p className="text-3xl font-extrabold tracking-tight text-olive">{value}</p>
+      <p className="mt-2 text-sm font-medium text-muted-foreground">{label}</p>
     </div>
   );
 }

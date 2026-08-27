@@ -26,16 +26,16 @@ export function SiteHeader() {
     isHydrated && isAuthenticated && role ? getHomeForRole(role) : authRoutes.login;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/80 bg-warm-white/90 backdrop-blur-md">
-      <PageContainer className="flex h-16 items-center justify-between gap-4">
+    <header className="sticky top-0 z-40 border-b border-border/60 bg-warm-white/95 backdrop-blur-md">
+      <PageContainer className="flex h-[4.25rem] items-center justify-between gap-4">
         <DriveXLogo />
 
-        <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-0.5 lg:flex">
           {publicNavItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-deep-navy"
+              className="rounded-full px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-deep-navy"
             >
               {item.label}
             </Link>
@@ -44,16 +44,10 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-2 lg:flex">
           <Link
-            href={publicRoutes.driveWithUs}
+            href={isAuthenticated ? appHref : authRoutes.login}
             className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
           >
-            Drive With Us
-          </Link>
-          <Link
-            href={isAuthenticated ? appHref : authRoutes.login}
-            className={cn(buttonVariants({ variant: "navy", size: "sm" }))}
-          >
-            {isAuthenticated ? "Open app" : "Book a Driver"}
+            {isAuthenticated ? "Open app" : "Log in"}
           </Link>
           <a
             href="#download-app"
@@ -85,7 +79,7 @@ export function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-md px-3 py-3 text-base font-medium text-deep-navy hover:bg-muted"
+                  className="rounded-xl px-3 py-3 text-base font-medium text-deep-navy hover:bg-muted"
                 >
                   {item.label}
                 </Link>
@@ -93,14 +87,14 @@ export function SiteHeader() {
               <Link
                 href={publicRoutes.driveWithUs}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-3 text-base font-medium text-deep-navy hover:bg-muted"
+                className="rounded-xl px-3 py-3 text-base font-medium text-deep-navy hover:bg-muted"
               >
                 Drive With Us
               </Link>
               <Link
                 href={isAuthenticated ? appHref : authRoutes.login}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-3 text-base font-medium text-deep-navy hover:bg-muted"
+                className="rounded-xl px-3 py-3 text-base font-medium text-deep-navy hover:bg-muted"
               >
                 {isAuthenticated ? "Open app" : "Log in"}
               </Link>

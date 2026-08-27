@@ -5,16 +5,16 @@ export const publicContent = {
   hero: {
     eyebrow: "Safe. Reliable. Always.",
     titleLine1: "Your Driver,",
-    titleLine2: "Your Vehicle",
+    titleLine2: "Your Way",
     description:
-      "DriveX connects you with verified drivers who drive your own vehicle. Book driving service — not a rental car.",
+      "Book verified drivers who drive your own vehicle — instantly for today, or schedule for later. Clear fares, live trip updates, and support when you need it.",
     primaryCta: "Book a Driver",
     secondaryCta: "Drive With Us",
   },
   features: [
     {
       icon: "Zap",
-      title: "Book a Driver Fast",
+      title: "Quick Bookings",
       description:
         "Request a driving service in a few steps and get matched with an available driver.",
     },
@@ -25,13 +25,13 @@ export const publicContent = {
     },
     {
       icon: "Wallet",
-      title: "Transparent Pricing",
+      title: "Affordable Pricing",
       description:
         "See driver-service fare estimates before you confirm so you know what to expect.",
     },
     {
       icon: "Headphones",
-      title: "Responsive Support",
+      title: "24/7 Support",
       description: "Reach support through in-app channels when you need help with a trip.",
     },
   ],
@@ -172,21 +172,29 @@ export const publicContent = {
     },
   ],
   about: {
-    heroTitle: "Drivers for your vehicle — on one platform",
+    heroTitle: "About DriveX",
     intro:
-      "DriveX is a driver-booking platform. Users own the vehicle; drivers provide the driving service. Bookings and trips are shared domain records — not duplicated silos.",
+      "DriveX is a driver-booking platform. Users own the vehicle; drivers provide the driving service. Bookings and trips are shared domain records — not duplicated silos. We build for clarity, reliability, and safer everyday trips.",
     mission:
       "Build a reliable platform that makes booking a driver simple for users who bring their own vehicles.",
     vision:
       "Make every journey easier and more reliable through clear product design and trustworthy operations.",
+    stats: [
+      { value: "10K+", label: "Happy Riders" },
+      { value: "5K+", label: "Trusted Drivers" },
+      { value: "50K+", label: "Rides Completed" },
+      { value: "20+", label: "Cities" },
+    ],
+    statsNote: "Illustrative targets for the product roadmap — not live production metrics.",
   },
   contact: {
-    intro: "Questions about DriveX, partnerships, or the product roadmap? Send a message.",
+    intro:
+      "Questions about DriveX, partnerships, or the product roadmap? Reach out — we usually respond within one business day.",
     placeholders: {
-      phone: "Phone number coming soon",
+      phone: "+91 1800 000 000",
       email: "hello@drivex.example",
-      support: "Use the form for support requests",
-      business: "Use subject “Business enquiry”",
+      address: "Bengaluru, India",
+      support: "Mon–Sun · 8:00 AM – 10:00 PM IST",
     },
   },
   driveWithUs: {

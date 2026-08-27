@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { publicRoutes } from "@/config/routes";
 import { siteConfig } from "@/config/site";
 
-const logoVariants = cva("inline-flex items-baseline font-bold tracking-tight", {
+const logoVariants = cva("inline-flex items-baseline font-extrabold tracking-tight", {
   variants: {
     variant: {
       default: "text-deep-navy",
@@ -40,7 +40,7 @@ export function DriveXLogo({
   const content = (
     <span className={cn(logoVariants({ variant, size }), className)}>
       Drive
-      <span className="text-orange">X</span>
+      <span className="text-olive">X</span>
       <span className="sr-only">{siteConfig.name}</span>
     </span>
   );

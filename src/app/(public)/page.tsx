@@ -1,4 +1,5 @@
 import {
+  Check,
   Headphones,
   ShieldCheck,
   Wallet,
@@ -34,6 +35,32 @@ const iconMap: Record<string, LucideIcon> = {
   Headphones,
 };
 
+function DriverRecruitVisual() {
+  return (
+    <div
+      className="relative min-h-[18rem] overflow-hidden rounded-3xl bg-[#1c272e]"
+      aria-hidden
+    >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(45,90,39,0.35),transparent_50%)]" />
+      <svg viewBox="0 0 420 320" className="absolute inset-0 h-full w-full opacity-90">
+        <rect x="40" y="60" width="200" height="180" rx="16" fill="#243038" />
+        <rect x="58" y="78" width="164" height="90" rx="10" fill="#3a4a52" />
+        <circle cx="150" cy="210" r="36" fill="#d8c4a8" />
+        <path d="M118 250c10-28 54-28 64 0" fill="#2d5a27" />
+        <rect x="250" y="120" width="140" height="100" rx="12" fill="#2a353c" />
+        <circle cx="280" cy="220" r="18" fill="#121a1f" />
+        <circle cx="360" cy="220" r="18" fill="#121a1f" />
+      </svg>
+      <div className="absolute bottom-5 left-5 right-5 rounded-2xl bg-warm-white/95 p-4 text-deep-navy shadow-medium backdrop-blur">
+        <p className="text-caption font-semibold uppercase tracking-wide text-olive">
+          Driver mode
+        </p>
+        <p className="mt-1 font-semibold">Go online · Accept trips · Earn</p>
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   const c = publicContent;
 
@@ -44,7 +71,7 @@ export default function HomePage() {
       <main>
         <HeroSection />
 
-        <section className="py-16 sm:py-20">
+        <section className="bg-cream py-16 sm:py-20">
           <PageContainer>
             <SectionHeading
               eyebrow="Why DriveX"
@@ -76,9 +103,9 @@ export default function HomePage() {
               {c.howItWorksSteps.map((step) => (
                 <li
                   key={step.step}
-                  className="rounded-xl border border-border/80 bg-cream/60 p-5"
+                  className="rounded-2xl border border-border/70 bg-cream/80 p-5"
                 >
-                  <p className="text-caption font-bold tracking-wider text-orange">
+                  <p className="text-caption font-bold tracking-wider text-olive">
                     {step.step}
                   </p>
                   <h3 className="mt-2 text-lg font-semibold text-deep-navy">
@@ -99,39 +126,20 @@ export default function HomePage() {
           </PageContainer>
         </section>
 
-        <section className="py-16 sm:py-20">
-          <PageContainer>
-            <SectionHeading
-              eyebrow="For riders"
-              title="Why choose DriveX"
-              description="Practical benefits without overstated claims — focused on clarity and reliability."
-            />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {c.userBenefits.map((item) => (
-                <article
-                  key={item.title}
-                  className="rounded-xl border border-border/70 bg-warm-white p-5 shadow-soft"
-                >
-                  <h3 className="font-semibold text-deep-navy">{item.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
-                </article>
-              ))}
-            </div>
-          </PageContainer>
-        </section>
-
         <section className="bg-deep-navy py-16 text-warm-white sm:py-20">
           <PageContainer className="grid items-center gap-10 lg:grid-cols-2">
             <div>
-              <p className="text-caption font-semibold uppercase tracking-wider text-orange">
+              <p className="text-caption font-semibold uppercase tracking-wider text-olive">
                 Drive with us
               </p>
               <h2 className="mt-2 text-h2 text-warm-white">{c.driverRecruit.title}</h2>
-              <p className="mt-4 text-warm-beige/90">{c.driverRecruit.description}</p>
-              <ul className="mt-6 grid gap-2 sm:grid-cols-2">
+              <p className="mt-4 text-white/75">{c.driverRecruit.description}</p>
+              <ul className="mt-6 space-y-3">
                 {c.driverRecruit.points.map((point) => (
-                  <li key={point} className="flex items-center gap-2 text-sm">
-                    <span className="size-1.5 rounded-full bg-olive" aria-hidden />
+                  <li key={point} className="flex items-center gap-3 text-sm text-white/90">
+                    <span className="inline-flex size-6 items-center justify-center rounded-full bg-olive text-white">
+                      <Check className="size-3.5" strokeWidth={3} aria-hidden />
+                    </span>
                     {point}
                   </li>
                 ))}
@@ -146,16 +154,7 @@ export default function HomePage() {
                 {c.driverRecruit.cta}
               </Link>
             </div>
-            <div
-              className="relative min-h-[16rem] overflow-hidden rounded-2xl bg-[#1a3558]"
-              aria-hidden
-            >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(224,120,58,0.35),transparent_45%),radial-gradient(circle_at_80%_70%,rgba(92,107,58,0.35),transparent_40%)]" />
-              <div className="absolute bottom-6 left-6 right-6 rounded-xl bg-warm-white/95 p-4 text-deep-navy shadow-medium">
-                <p className="text-caption font-semibold uppercase text-olive">Driver</p>
-                <p className="mt-1 font-semibold">Go online · Accept trips · Earn</p>
-              </div>
-            </div>
+            <DriverRecruitVisual />
           </PageContainer>
         </section>
 
@@ -170,7 +169,7 @@ export default function HomePage() {
               {c.safetyHighlights.map((item) => (
                 <article
                   key={item.title}
-                  className="rounded-xl border border-border bg-warm-white p-5"
+                  className="rounded-2xl border border-border bg-warm-white p-5 shadow-soft"
                 >
                   <h3 className="font-semibold text-deep-navy">{item.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
@@ -188,7 +187,7 @@ export default function HomePage() {
 
         <TestimonialSection />
 
-        <section className="bg-warm-beige/40 py-16 sm:py-20">
+        <section className="bg-cream py-16 sm:py-20">
           <PageContainer>
             <SectionHeading
               eyebrow="Cities"
@@ -208,7 +207,7 @@ export default function HomePage() {
           </PageContainer>
         </section>
 
-        <section id="faq" className="scroll-mt-24 py-16 sm:py-20">
+        <section id="faq" className="scroll-mt-24 bg-warm-white py-16 sm:py-20">
           <PageContainer className="max-w-3xl">
             <SectionHeading
               eyebrow="FAQ"
@@ -228,7 +227,7 @@ export default function HomePage() {
 
         <CTASection
           tone="navy"
-          title="Ready for your next ride?"
+          title="Ready for your next trip?"
           description="Create an account, verify with OTP, and choose whether you want to ride or drive."
           primary={{ label: "Book a Driver", href: authRoutes.login }}
           secondary={{ label: "Drive With Us", href: publicRoutes.driveWithUs }}
