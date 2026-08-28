@@ -7,8 +7,15 @@ const path = require("path");
 const fs = require("fs");
 
 const PORT = process.env.MOCK_API_PORT || 3001;
-const DB_PATH = path.join(__dirname, "db.json");
+const SOURCE_DB_PATH = path.join(__dirname, "db.json");
+const DB_PATH = process.env.VERCEL
+  ? path.join("/tmp", "drivex-db.json")
+  : SOURCE_DB_PATH;
 const MOCK_OTP = "123456";
+
+if (process.env.VERCEL && !fs.existsSync(DB_PATH)) {
+  fs.copyFileSync(SOURCE_DB_PATH, DB_PATH);
+}
 
 const bookingTransitions = {
   REQUESTED: ["SEARCHING", "CANCELLED", "EXPIRED"],
@@ -1597,8 +1604,12 @@ server.delete("/api/saved-places/:id", (req, res) => {
 // Fallback raw resources (debug)
 server.use("/api/raw", router);
 
-server.listen(PORT, () => {
-  console.log(`DriveX mock API running at http://localhost:${PORT}`);
-  console.log(`Mock OTP (dev only): ${MOCK_OTP}`);
-  console.log(`Test users: user@example.test / driver@example.test (password123)`);
-});
+if (require.main === module) {
+  server.listen(PORT, () => {
+    console.log(`DriveX mock API running at http://localhost:${PORT}`);
+    console.log(`Mock OTP (dev only): ${MOCK_OTP}`);
+    console.log(`Test users: user@example.test / driver@example.test (password123)`);
+  });
+}
+
+module.exports = server;
