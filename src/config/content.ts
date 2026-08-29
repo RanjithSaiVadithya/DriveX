@@ -32,7 +32,8 @@ export const publicContent = {
     {
       icon: "Headphones",
       title: "24/7 Support",
-      description: "Reach support through in-app channels when you need help with a trip.",
+      description:
+        "Reach support through in-app channels when you need help with a trip.",
     },
   ],
   howItWorksSteps: [
@@ -114,9 +115,45 @@ export const publicContent = {
       description: "Contact and help pathways for issues during or after a trip.",
     },
   ],
-  citiesDemo: {
-    note: "Demo service areas for product exploration — not a live coverage claim.",
-    cities: ["Bengaluru", "Mumbai", "Hyderabad", "Chennai", "Delhi"],
+  popularCities: {
+    note: "Explore the places, landmarks, and everyday journeys that shape the DriveX experience.",
+    cities: [
+      {
+        name: "Bengaluru",
+        region: "Karnataka",
+        description: "India’s technology and startup hub.",
+        image: "/images/bengaluru-city.webp",
+        alt: "Bengaluru skyline and Bangalore Palace",
+      },
+      {
+        name: "Mumbai",
+        region: "Maharashtra",
+        description: "India’s financial capital by the Arabian Sea.",
+        image: "/images/mumbai-city.webp",
+        alt: "Mumbai coastline and city skyline",
+      },
+      {
+        name: "Hyderabad",
+        region: "Telangana",
+        description: "A city of heritage, technology, and culture.",
+        image: "/images/hyderabad-city.webp",
+        alt: "Charminar in Hyderabad at sunset",
+      },
+      {
+        name: "Chennai",
+        region: "Tamil Nadu",
+        description: "A coastal city known for Marina Beach and mobility.",
+        image: "/images/chennai-city.webp",
+        alt: "Chennai coastline and Marina Beach",
+      },
+      {
+        name: "New Delhi",
+        region: "Delhi",
+        description: "India’s capital with broad, historic avenues.",
+        image: "/images/delhi-city.webp",
+        alt: "India Gate in New Delhi",
+      },
+    ],
   },
   testimonialsDemo: {
     note: "Demo quotes for layout only — not verified customer reviews.",
@@ -185,7 +222,8 @@ export const publicContent = {
       { value: "50K+", label: "Rides Completed" },
       { value: "20+", label: "Cities" },
     ],
-    statsNote: "Illustrative targets for the product roadmap — not live production metrics.",
+    statsNote:
+      "Illustrative targets for the product roadmap — not live production metrics.",
   },
   contact: {
     intro:
@@ -214,7 +252,8 @@ export const publicContent = {
       },
       {
         title: "Document workflow",
-        description: "Upload and track verification status for required driver documents.",
+        description:
+          "Upload and track verification status for required driver documents.",
       },
     ],
     onboarding: [

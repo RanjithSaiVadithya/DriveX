@@ -2,11 +2,7 @@ import Link from "next/link";
 import { DriveXLogo } from "@/components/shared/logo";
 import { PageContainer } from "@/components/shared/page-container";
 import { AppDownloadSection } from "@/components/public/app-download-section";
-import {
-  footerCompanyLinks,
-  footerSupportLinks,
-  publicContent,
-} from "@/config/content";
+import { footerCompanyLinks, footerSupportLinks, publicContent } from "@/config/content";
 import { siteConfig } from "@/config/site";
 
 const socialLinks = [
@@ -47,7 +43,7 @@ export function SiteFooter() {
                 <a
                   href={href}
                   aria-label={label}
-                  className="inline-flex size-9 items-center justify-center rounded-full border border-white/15 text-white/80 transition-colors hover:border-olive hover:bg-olive hover:text-white"
+                  className="hover:border-olive hover:bg-olive inline-flex size-9 items-center justify-center rounded-full border border-white/15 text-white/80 transition-colors hover:text-white"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -68,7 +64,7 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-white/55">
+          <h2 className="text-sm font-semibold tracking-wide text-white/55 uppercase">
             Company
           </h2>
           <ul className="mt-4 space-y-2.5">
@@ -86,7 +82,7 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-white/55">
+          <h2 className="text-sm font-semibold tracking-wide text-white/55 uppercase">
             Support
           </h2>
           <ul className="mt-4 space-y-2.5">
@@ -104,20 +100,20 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-white/55">
+          <h2 className="text-sm font-semibold tracking-wide text-white/55 uppercase">
             Popular cities
           </h2>
           <ul className="mt-4 space-y-2.5">
-            {publicContent.citiesDemo.cities.map((city) => (
-              <li key={city} className="text-sm text-white/85">
-                {city}
+            {publicContent.popularCities.cities.map((city) => (
+              <li key={city.name} className="text-sm text-white/85">
+                {city.name}
               </li>
             ))}
           </ul>
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-white/55">
+          <h2 className="text-sm font-semibold tracking-wide text-white/55 uppercase">
             Download App
           </h2>
           <p className="mt-3 text-sm text-white/65">
@@ -130,7 +126,7 @@ export function SiteFooter() {
       </PageContainer>
 
       <div className="border-t border-white/10">
-        <PageContainer className="flex flex-col gap-2 py-6 text-caption text-white/50 sm:flex-row sm:items-center sm:justify-between">
+        <PageContainer className="text-caption flex flex-col gap-2 py-6 text-white/50 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>

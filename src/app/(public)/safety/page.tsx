@@ -1,8 +1,8 @@
-import { PageContainer, SectionHeading } from "@/components/shared/page-container";
+import { PageContainer } from "@/components/shared/page-container";
 import { CTASection } from "@/components/shared/cta-section";
-import { publicContent } from "@/config/content";
 import { buildPageMetadata } from "@/lib/seo";
 import { authRoutes, publicRoutes } from "@/config/routes";
+import { SafetyFlowSection } from "@/components/public/safety-flow-section";
 import { ShieldCheck } from "lucide-react";
 
 export const metadata = buildPageMetadata({
@@ -38,39 +38,21 @@ const practices = [
 export default function SafetyPage() {
   return (
     <main>
-      <section className="border-b border-border/70 bg-warm-white py-16 sm:py-20">
+      <section className="border-border/70 bg-warm-white border-b py-16 sm:py-20">
         <PageContainer className="max-w-3xl">
-          <p className="inline-flex items-center gap-2 text-caption font-semibold uppercase tracking-wider text-olive">
+          <p className="text-caption text-olive inline-flex items-center gap-2 font-semibold tracking-wider uppercase">
             <ShieldCheck className="size-4" aria-hidden />
             Safety
           </p>
           <h1 className="text-h1 mt-3">Safety built into the product foundation</h1>
-          <p className="mt-5 text-lg text-muted-foreground">
+          <p className="text-muted-foreground mt-5 text-lg">
             We describe capabilities that exist in the platform design. We do not claim
             live emergency response or unverified coverage.
           </p>
         </PageContainer>
       </section>
 
-      <section className="py-16 sm:py-20">
-        <PageContainer>
-          <SectionHeading
-            title="Safety overview"
-            description="Foundational controls for riders and drivers."
-          />
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
-            {publicContent.safetyHighlights.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-2xl border border-border bg-warm-white p-6 shadow-soft"
-              >
-                <h2 className="text-lg font-semibold text-deep-navy">{item.title}</h2>
-                <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
-              </article>
-            ))}
-          </div>
-        </PageContainer>
-      </section>
+      <SafetyFlowSection compact />
 
       <section className="bg-cream py-16 sm:py-20">
         <PageContainer className="max-w-3xl space-y-6">
@@ -78,10 +60,10 @@ export default function SafetyPage() {
           {practices.map((item) => (
             <article
               key={item.title}
-              className="rounded-2xl border border-border/70 bg-warm-white p-5"
+              className="border-border/70 bg-warm-white rounded-2xl border p-5"
             >
               <h3 className="text-h3">{item.title}</h3>
-              <p className="mt-2 text-muted-foreground">{item.body}</p>
+              <p className="text-muted-foreground mt-2">{item.body}</p>
             </article>
           ))}
         </PageContainer>

@@ -1,7 +1,6 @@
 import {
   Check,
   Headphones,
-  MapPin,
   ShieldCheck,
   Wallet,
   Zap,
@@ -10,6 +9,7 @@ import {
 import { HeroSection } from "@/components/public/hero-section";
 import { AppDownloadSection } from "@/components/public/app-download-section";
 import { TestimonialSection } from "@/components/public/testimonial-section";
+import { SafetyFlowSection } from "@/components/public/safety-flow-section";
 import { FeatureCard } from "@/components/shared/feature-card";
 import { FAQItem } from "@/components/shared/faq-item";
 import { CTASection } from "@/components/shared/cta-section";
@@ -18,6 +18,7 @@ import { JsonLd, organizationJsonLd, websiteJsonLd } from "@/lib/structured-data
 import { buildPageMetadata } from "@/lib/seo";
 import { publicContent } from "@/config/content";
 import { authRoutes, publicRoutes } from "@/config/routes";
+import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -52,8 +53,8 @@ function DriverRecruitVisual() {
         <circle cx="280" cy="220" r="18" fill="#121a1f" />
         <circle cx="360" cy="220" r="18" fill="#121a1f" />
       </svg>
-      <div className="absolute bottom-5 left-5 right-5 rounded-2xl bg-warm-white/95 p-4 text-deep-navy shadow-medium backdrop-blur">
-        <p className="text-caption font-semibold uppercase tracking-wide text-olive">
+      <div className="bg-warm-white/95 text-deep-navy shadow-medium absolute right-5 bottom-5 left-5 rounded-2xl p-4 backdrop-blur">
+        <p className="text-caption text-olive font-semibold tracking-wide uppercase">
           Driver mode
         </p>
         <p className="mt-1 font-semibold">Go online · Accept trips · Earn</p>
@@ -104,15 +105,15 @@ export default function HomePage() {
               {c.howItWorksSteps.map((step) => (
                 <li
                   key={step.step}
-                  className="rounded-2xl border border-border/70 bg-cream/80 p-5"
+                  className="border-border/70 bg-cream/80 rounded-2xl border p-5"
                 >
-                  <p className="text-caption font-bold tracking-wider text-olive">
+                  <p className="text-caption text-olive font-bold tracking-wider">
                     {step.step}
                   </p>
-                  <h3 className="mt-2 text-lg font-semibold text-deep-navy">
+                  <h3 className="text-deep-navy mt-2 text-lg font-semibold">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{step.description}</p>
+                  <p className="text-muted-foreground mt-2 text-sm">{step.description}</p>
                 </li>
               ))}
             </ol>
@@ -127,18 +128,21 @@ export default function HomePage() {
           </PageContainer>
         </section>
 
-        <section className="bg-deep-navy py-16 text-warm-white sm:py-20">
+        <section className="bg-deep-navy text-warm-white py-16 sm:py-20">
           <PageContainer className="grid items-center gap-10 lg:grid-cols-2">
             <div>
-              <p className="text-caption font-semibold uppercase tracking-wider text-olive">
+              <p className="text-caption text-olive font-semibold tracking-wider uppercase">
                 Drive with us
               </p>
-              <h2 className="mt-2 text-h2 text-warm-white">{c.driverRecruit.title}</h2>
+              <h2 className="text-h2 text-warm-white mt-2">{c.driverRecruit.title}</h2>
               <p className="mt-4 text-white/75">{c.driverRecruit.description}</p>
               <ul className="mt-6 space-y-3">
                 {c.driverRecruit.points.map((point) => (
-                  <li key={point} className="flex items-center gap-3 text-sm text-white/90">
-                    <span className="inline-flex size-6 items-center justify-center rounded-full bg-olive text-white">
+                  <li
+                    key={point}
+                    className="flex items-center gap-3 text-sm text-white/90"
+                  >
+                    <span className="bg-olive inline-flex size-6 items-center justify-center rounded-full text-white">
                       <Check className="size-3.5" strokeWidth={3} aria-hidden />
                     </span>
                     {point}
@@ -159,32 +163,7 @@ export default function HomePage() {
           </PageContainer>
         </section>
 
-        <section className="py-16 sm:py-20">
-          <PageContainer>
-            <SectionHeading
-              eyebrow="Safety"
-              title="Designed with safer trips in mind"
-              description="Safety practices we are building into the product — without claiming services that are not live yet."
-            />
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              {c.safetyHighlights.map((item) => (
-                <article
-                  key={item.title}
-                  className="rounded-2xl border border-border bg-warm-white p-5 shadow-soft"
-                >
-                  <h3 className="font-semibold text-deep-navy">{item.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
-                </article>
-              ))}
-            </div>
-            <Link
-              href={publicRoutes.safety}
-              className={cn(buttonVariants({ variant: "link" }), "mt-6 px-0")}
-            >
-              Read the full safety overview
-            </Link>
-          </PageContainer>
-        </section>
+        <SafetyFlowSection />
 
         <TestimonialSection />
 
@@ -193,27 +172,35 @@ export default function HomePage() {
             <SectionHeading
               eyebrow="Cities"
               title="Popular cities"
-              description={c.citiesDemo.note}
+              description={c.popularCities.note}
               align="center"
             />
-            <ul className="mx-auto mt-10 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-5">
-              {c.citiesDemo.cities.map((city) => (
+            <ul className="mx-auto mt-10 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-5">
+              {c.popularCities.cities.map((city) => (
                 <li
-                  key={city}
-                  className="group rounded-2xl border border-border/70 bg-cream p-4 transition-all hover:-translate-y-0.5 hover:border-olive/40 hover:bg-olive/5 hover:shadow-soft"
+                  key={city.name}
+                  className="group border-border/70 bg-cream shadow-soft hover:border-olive/40 hover:shadow-medium overflow-hidden rounded-3xl border transition-all hover:-translate-y-1"
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-olive/10 text-olive transition-colors group-hover:bg-olive group-hover:text-white">
-                      <MapPin className="size-4" strokeWidth={1.75} aria-hidden />
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={city.image}
+                      alt={city.alt}
+                      fill
+                      sizes="(min-width: 1024px) 180px, (min-width: 640px) 45vw, 100vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="from-deep-navy/75 absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
+                    <span className="absolute bottom-3 left-4 text-sm font-bold text-white">
+                      {city.name}
                     </span>
-                    <span>
-                      <span className="block text-sm font-semibold text-deep-navy">
-                        {city}
-                      </span>
-                      <span className="text-caption text-muted-foreground">
-                        Coming soon
-                      </span>
-                    </span>
+                  </div>
+                  <div className="p-4">
+                    <p className="text-caption text-olive font-semibold tracking-wide uppercase">
+                      {city.region}
+                    </p>
+                    <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
+                      {city.description}
+                    </p>
                   </div>
                 </li>
               ))}
@@ -221,7 +208,7 @@ export default function HomePage() {
           </PageContainer>
         </section>
 
-        <section id="faq" className="scroll-mt-24 bg-cream py-16 sm:py-20">
+        <section id="faq" className="bg-cream scroll-mt-24 py-16 sm:py-20">
           <PageContainer className="grid items-start gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <SectionHeading
               eyebrow="FAQ"
@@ -231,11 +218,11 @@ export default function HomePage() {
             />
             <div>
               <FAQItem items={c.faq} />
-              <p className="mt-6 text-center text-sm text-muted-foreground lg:text-left">
+              <p className="text-muted-foreground mt-6 text-center text-sm lg:text-left">
                 Still need help?{" "}
                 <Link
                   href={publicRoutes.contact}
-                  className="font-semibold text-olive hover:underline"
+                  className="text-olive font-semibold hover:underline"
                 >
                   Contact our team
                 </Link>
