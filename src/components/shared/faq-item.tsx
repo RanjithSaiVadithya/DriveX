@@ -15,14 +15,18 @@ export function FAQItem({
   return (
     <Accordion
       multiple
-      className="w-full divide-y divide-border rounded-xl border border-border bg-warm-white px-1"
+      className="w-full divide-y divide-border/70 rounded-3xl border border-border/70 bg-warm-white px-2 shadow-soft"
     >
       {items.map((item, index) => (
-        <AccordionItem key={item.question} value={`item-${index}`} className="px-3">
-          <AccordionTrigger className="py-4 text-left text-base font-semibold text-deep-navy hover:no-underline">
+        <AccordionItem
+          key={item.question}
+          value={`item-${index}`}
+          className="px-3"
+        >
+          <AccordionTrigger className="py-5 text-left text-base font-semibold text-deep-navy hover:no-underline">
             {item.question}
           </AccordionTrigger>
-          <AccordionContent className="pb-4 text-muted-foreground">
+          <AccordionContent className="max-w-2xl pb-5 text-sm leading-relaxed text-muted-foreground">
             {item.answer}
           </AccordionContent>
         </AccordionItem>

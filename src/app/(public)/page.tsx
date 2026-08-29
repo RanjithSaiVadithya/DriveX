@@ -1,6 +1,7 @@
 import {
   Check,
   Headphones,
+  MapPin,
   ShieldCheck,
   Wallet,
   Zap,
@@ -187,36 +188,58 @@ export default function HomePage() {
 
         <TestimonialSection />
 
-        <section className="bg-cream py-16 sm:py-20">
+        <section className="bg-warm-white py-16 sm:py-20">
           <PageContainer>
             <SectionHeading
               eyebrow="Cities"
               title="Popular cities"
               description={c.citiesDemo.note}
+              align="center"
             />
-            <ul className="mt-8 flex flex-wrap gap-3">
+            <ul className="mx-auto mt-10 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-5">
               {c.citiesDemo.cities.map((city) => (
                 <li
                   key={city}
-                  className="rounded-full border border-border bg-warm-white px-4 py-2 text-sm font-medium text-deep-navy shadow-soft"
+                  className="group rounded-2xl border border-border/70 bg-cream p-4 transition-all hover:-translate-y-0.5 hover:border-olive/40 hover:bg-olive/5 hover:shadow-soft"
                 >
-                  {city}
+                  <div className="flex items-center gap-3">
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-olive/10 text-olive transition-colors group-hover:bg-olive group-hover:text-white">
+                      <MapPin className="size-4" strokeWidth={1.75} aria-hidden />
+                    </span>
+                    <span>
+                      <span className="block text-sm font-semibold text-deep-navy">
+                        {city}
+                      </span>
+                      <span className="text-caption text-muted-foreground">
+                        Coming soon
+                      </span>
+                    </span>
+                  </div>
                 </li>
               ))}
             </ul>
           </PageContainer>
         </section>
 
-        <section id="faq" className="scroll-mt-24 bg-warm-white py-16 sm:py-20">
-          <PageContainer className="max-w-3xl">
+        <section id="faq" className="scroll-mt-24 bg-cream py-16 sm:py-20">
+          <PageContainer className="grid items-start gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <SectionHeading
               eyebrow="FAQ"
               title="Common questions"
               description="Answers about booking, driving, payments, and support."
-              align="center"
+              className="lg:sticky lg:top-28"
             />
-            <div className="mt-10">
+            <div>
               <FAQItem items={c.faq} />
+              <p className="mt-6 text-center text-sm text-muted-foreground lg:text-left">
+                Still need help?{" "}
+                <Link
+                  href={publicRoutes.contact}
+                  className="font-semibold text-olive hover:underline"
+                >
+                  Contact our team
+                </Link>
+              </p>
             </div>
           </PageContainer>
         </section>
