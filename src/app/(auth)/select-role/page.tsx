@@ -7,8 +7,8 @@ export default function SelectRolePage() {
   return (
     <section>
       <h1 className="text-h2">How will you use DriveX?</h1>
-      <p className="mt-2 text-sm text-muted-foreground">
-        Choose User or Driver. Additional roles can be added later.
+      <p className="text-muted-foreground mt-2 text-sm">
+        Choose the role that fits how you use DriveX.
       </p>
       <div className="mt-8">
         <SelectRoleForm />

@@ -1,6 +1,7 @@
 import {
   Check,
   Headphones,
+  Route,
   ShieldCheck,
   Wallet,
   Zap,
@@ -8,8 +9,11 @@ import {
 } from "lucide-react";
 import { HeroSection } from "@/components/public/hero-section";
 import { AppDownloadSection } from "@/components/public/app-download-section";
-import { TestimonialSection } from "@/components/public/testimonial-section";
+import { ExperienceHighlights } from "@/components/public/testimonial-section";
 import { SafetyFlowSection } from "@/components/public/safety-flow-section";
+import { JourneyShowcase } from "@/components/public/journey-showcase";
+import { DriverDashboardPreview } from "@/components/public/driver-dashboard-preview";
+import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { FeatureCard } from "@/components/shared/feature-card";
 import { FAQItem } from "@/components/shared/faq-item";
 import { CTASection } from "@/components/shared/cta-section";
@@ -24,44 +28,19 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export const metadata = buildPageMetadata({
-  title: { absolute: "DriveX — Safe, Reliable Rides" },
+  title: { absolute: "DriveX — Safe, Reliable Trips" },
   description:
-    "Book verified drivers with DriveX. Safe, reliable rides with transparent pricing and shared trip records for riders and drivers.",
+    "Book verified Drivers with DriveX. Safe, reliable driving services with transparent pricing and shared Trip records for Users and Drivers.",
   path: publicRoutes.home,
 });
 
 const iconMap: Record<string, LucideIcon> = {
   Zap,
   ShieldCheck,
+  Route,
   Wallet,
   Headphones,
 };
-
-function DriverRecruitVisual() {
-  return (
-    <div
-      className="relative min-h-[18rem] overflow-hidden rounded-3xl bg-[#1c272e]"
-      aria-hidden
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(45,90,39,0.35),transparent_50%)]" />
-      <svg viewBox="0 0 420 320" className="absolute inset-0 h-full w-full opacity-90">
-        <rect x="40" y="60" width="200" height="180" rx="16" fill="#243038" />
-        <rect x="58" y="78" width="164" height="90" rx="10" fill="#3a4a52" />
-        <circle cx="150" cy="210" r="36" fill="#d8c4a8" />
-        <path d="M118 250c10-28 54-28 64 0" fill="#2d5a27" />
-        <rect x="250" y="120" width="140" height="100" rx="12" fill="#2a353c" />
-        <circle cx="280" cy="220" r="18" fill="#121a1f" />
-        <circle cx="360" cy="220" r="18" fill="#121a1f" />
-      </svg>
-      <div className="bg-warm-white/95 text-deep-navy shadow-medium absolute right-5 bottom-5 left-5 rounded-2xl p-4 backdrop-blur">
-        <p className="text-caption text-olive font-semibold tracking-wide uppercase">
-          Driver mode
-        </p>
-        <p className="mt-1 font-semibold">Go online · Accept trips · Earn</p>
-      </div>
-    </div>
-  );
-}
 
 export default function HomePage() {
   const c = publicContent;
@@ -73,50 +52,43 @@ export default function HomePage() {
       <main>
         <HeroSection />
 
-        <section className="bg-cream py-16 sm:py-20">
+        <section className="public-section bg-cream">
           <PageContainer>
             <SectionHeading
               eyebrow="Why DriveX"
               title="Built for everyday trips"
-              description="A clean booking experience for riders and a clear trip workflow for drivers — on one shared platform."
+              description="A clean booking experience for Users and a clear Trip workflow for Drivers — on one shared platform."
               align="center"
             />
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {c.features.map((feature) => (
-                <FeatureCard
-                  key={feature.title}
-                  icon={iconMap[feature.icon]}
-                  title={feature.title}
-                  description={feature.description}
-                />
-              ))}
-            </div>
+            <ScrollReveal delay={80}>
+              <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+                {c.features.map((feature) => (
+                  <FeatureCard
+                    key={feature.title}
+                    icon={iconMap[feature.icon]}
+                    eyebrow={feature.eyebrow}
+                    title={feature.title}
+                    description={feature.description}
+                  />
+                ))}
+              </div>
+            </ScrollReveal>
           </PageContainer>
         </section>
 
-        <section className="bg-warm-white py-16 sm:py-20">
+        <section className="public-section bg-warm-white">
           <PageContainer>
             <SectionHeading
               eyebrow="How it works"
-              title="Book a driver in four steps"
-              description="From request to arrival, status updates keep both sides aligned."
+              title="See the journey unfold"
+              description="Follow the User or Driver journey from request to completed Trip."
             />
-            <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {c.howItWorksSteps.map((step) => (
-                <li
-                  key={step.step}
-                  className="border-border/70 bg-cream/80 rounded-2xl border p-5"
-                >
-                  <p className="text-caption text-olive font-bold tracking-wider">
-                    {step.step}
-                  </p>
-                  <h3 className="text-deep-navy mt-2 text-lg font-semibold">
-                    {step.title}
-                  </h3>
-                  <p className="text-muted-foreground mt-2 text-sm">{step.description}</p>
-                </li>
-              ))}
-            </ol>
+            <ScrollReveal className="mt-8" delay={80}>
+              <JourneyShowcase
+                userSteps={c.journeys.user}
+                driverSteps={c.journeys.driver}
+              />
+            </ScrollReveal>
             <div className="mt-8">
               <Link
                 href={publicRoutes.howItWorks}
@@ -128,7 +100,7 @@ export default function HomePage() {
           </PageContainer>
         </section>
 
-        <section className="bg-deep-navy text-warm-white py-16 sm:py-20">
+        <section className="public-section bg-deep-navy text-warm-white">
           <PageContainer className="grid items-center gap-10 lg:grid-cols-2">
             <div>
               <p className="text-caption text-olive font-semibold tracking-wider uppercase">
@@ -159,15 +131,17 @@ export default function HomePage() {
                 {c.driverRecruit.cta}
               </Link>
             </div>
-            <DriverRecruitVisual />
+            <ScrollReveal delay={120}>
+              <DriverDashboardPreview />
+            </ScrollReveal>
           </PageContainer>
         </section>
 
         <SafetyFlowSection />
 
-        <TestimonialSection />
+        <ExperienceHighlights />
 
-        <section className="bg-warm-white py-16 sm:py-20">
+        <section className="public-section bg-warm-white">
           <PageContainer>
             <SectionHeading
               eyebrow="Cities"
@@ -175,40 +149,43 @@ export default function HomePage() {
               description={c.popularCities.note}
               align="center"
             />
-            <ul className="mx-auto mt-10 grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-5">
-              {c.popularCities.cities.map((city) => (
-                <li
-                  key={city.name}
-                  className="group border-border/70 bg-cream shadow-soft hover:border-olive/40 hover:shadow-medium overflow-hidden rounded-3xl border transition-all hover:-translate-y-1"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={city.image}
-                      alt={city.alt}
-                      fill
-                      sizes="(min-width: 1024px) 180px, (min-width: 640px) 45vw, 100vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="from-deep-navy/75 absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
-                    <span className="absolute bottom-3 left-4 text-sm font-bold text-white">
-                      {city.name}
-                    </span>
-                  </div>
-                  <div className="p-4">
-                    <p className="text-caption text-olive font-semibold tracking-wide uppercase">
-                      {city.region}
-                    </p>
-                    <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
-                      {city.description}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <ScrollReveal className="mt-8" delay={80}>
+              <ul className="mx-auto grid max-w-5xl gap-5 sm:grid-cols-2 lg:grid-cols-5">
+                {c.popularCities.cities.map((city) => (
+                  <li
+                    key={city.name}
+                    className="motion-lift group border-border/70 bg-cream shadow-soft hover:border-olive/40 overflow-hidden rounded-3xl border"
+                  >
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <Image
+                        src={city.image}
+                        alt={city.alt}
+                        fill
+                        loading="lazy"
+                        sizes="(min-width: 1024px) 180px, (min-width: 640px) 45vw, 100vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="from-deep-navy/75 absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
+                      <span className="absolute bottom-3 left-4 text-sm font-bold text-white">
+                        {city.name}
+                      </span>
+                    </div>
+                    <div className="p-4">
+                      <p className="text-caption text-olive font-semibold tracking-wide uppercase">
+                        {city.region}
+                      </p>
+                      <p className="text-muted-foreground mt-2 text-sm leading-relaxed">
+                        {city.description}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </ScrollReveal>
           </PageContainer>
         </section>
 
-        <section id="faq" className="bg-cream scroll-mt-24 py-16 sm:py-20">
+        <section id="faq" className="public-section bg-cream scroll-mt-24">
           <PageContainer className="grid items-start gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <SectionHeading
               eyebrow="FAQ"
@@ -238,7 +215,7 @@ export default function HomePage() {
         <CTASection
           tone="navy"
           title="Ready for your next trip?"
-          description="Create an account, verify with OTP, and choose whether you want to ride or drive."
+          description="Create an account, verify your phone, and choose whether you want to book a Driver or provide driving services."
           primary={{ label: "Book a Driver", href: authRoutes.login }}
           secondary={{ label: "Drive With Us", href: publicRoutes.driveWithUs }}
         />

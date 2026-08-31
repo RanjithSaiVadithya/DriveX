@@ -9,8 +9,8 @@ export default function SignupPage() {
     <RedirectIfAuthenticated>
       <section>
         <h1 className="text-h2">Create your account</h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Full name, phone, and email. OTP verification uses mock code 123456.
+        <p className="text-muted-foreground mt-2 text-sm">
+          Add your details and verify your phone to get started.
         </p>
         <div className="mt-8">
           <SignupForm />

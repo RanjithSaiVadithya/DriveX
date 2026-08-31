@@ -7,8 +7,8 @@ export default function VerifyOtpPage() {
   return (
     <section>
       <h1 className="text-h2">Verify OTP</h1>
-      <p className="mt-2 text-sm text-muted-foreground">
-        Paste-friendly 6-digit code. Development only — not secure production auth.
+      <p className="text-muted-foreground mt-2 text-sm">
+        Enter the six-digit verification code sent to your phone.
       </p>
       <div className="mt-8">
         <OtpForm />

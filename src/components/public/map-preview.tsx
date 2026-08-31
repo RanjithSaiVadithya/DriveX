@@ -4,13 +4,13 @@ export function MapPreview({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-2xl border border-border bg-[#e9eee9] shadow-soft",
+        "border-border shadow-soft overflow-hidden rounded-2xl border bg-[#e9eee9]",
         className,
       )}
       role="img"
-      aria-label="Map preview placeholder showing a sample route"
+      aria-label="Illustration of a completed trip route"
     >
-      <svg viewBox="0 0 640 360" className="h-full w-full min-h-[12rem]">
+      <svg viewBox="0 0 640 360" className="h-full min-h-[12rem] w-full">
         <rect width="640" height="360" fill="#e9eee9" />
         <path
           d="M0 80 H640 M0 160 H640 M0 240 H640 M0 300 H640 M80 0 V360 M200 0 V360 M360 0 V360 M480 0 V360 M560 0 V360"
@@ -35,7 +35,7 @@ export function MapPreview({ className }: { className?: string }) {
           fontSize="14"
           fontFamily="system-ui, sans-serif"
         >
-          Map preview · demo visual
+          Trip route
         </text>
       </svg>
     </div>

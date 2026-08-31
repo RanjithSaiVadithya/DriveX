@@ -9,8 +9,9 @@ export default function LoginPage() {
     <RedirectIfAuthenticated>
       <section>
         <h1 className="text-h2">Welcome back</h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Enter your phone number to continue. We&apos;ll send a mock OTP for development.
+        <p className="text-muted-foreground mt-2 text-sm">
+          Enter your phone number to continue. We&apos;ll send a six-digit verification
+          code.
         </p>
         <div className="mt-8">
           <LoginForm />

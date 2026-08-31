@@ -2,6 +2,72 @@ import { publicRoutes, authRoutes } from "./routes";
 
 export const publicContent = {
   brandTagline: "Safe. Reliable. Always.",
+  safetyFlow: {
+    eyebrow: "Safety",
+    title: "Safety you can see in the flow",
+    description:
+      "Trust is built through visible product steps — from driver verification to a complete, shared trip record.",
+    clarityTitle: "Built for clarity.",
+    clarityDescription: "See what has happened, what is happening, and what comes next.",
+    steps: [
+      {
+        number: "01",
+        icon: "FileCheck2",
+        title: "Driver verification",
+        description:
+          "Drivers submit required identity and licence documents during onboarding, with verification status tracked before trips begin.",
+        status: "Verification status tracked",
+        previewFocus: "Driver verification",
+        previewDetail: "Documents and status checked before trips begin",
+      },
+      {
+        number: "02",
+        icon: "Route",
+        title: "One shared trip record",
+        description:
+          "Pickup, destination, User vehicle, fare estimate, and Driver assignment stay connected to one booking and Trip.",
+        status: "Booking → Trip → Payment",
+        previewFocus: "One shared trip record",
+        previewDetail: "Booking, vehicle, Driver, and fare stay connected",
+      },
+      {
+        number: "03",
+        icon: "BellRing",
+        title: "Status you can follow",
+        description:
+          "Both sides can follow the trip from assigned to arriving, arrived, started, and completed.",
+        status: "Live status transitions",
+        previewFocus: "Live trip status",
+        previewDetail: "Follow each transition as the Trip progresses",
+      },
+      {
+        number: "04",
+        icon: "CheckCircle2",
+        title: "Clear closeout",
+        description:
+          "The final fare, payment record, driver earning, and notifications stay tied back to the completed trip.",
+        status: "Completion recorded",
+        previewFocus: "Clear closeout",
+        previewDetail: "Completion, payment, and earning records are connected",
+      },
+    ],
+    preview: {
+      eyebrow: "Product preview",
+      title: "Trip in progress",
+      completedTitle: "Trip completed",
+      vehicleLabel: "Your vehicle",
+      vehicleRegistration: "KA 01 AB 1234",
+      vehicleName: "Toyota Fortuner",
+      statusLabel: "Driver status",
+      statuses: ["Assigned", "Arriving", "Started", "Completed"],
+      fareLabel: "Trip fare",
+      fare: "₹750",
+      detailsCta: "View trip details",
+      demoLabel: "Demo product view",
+    },
+    ctaTitle: "One trip. One shared record. Clear from start to finish.",
+    ctaLabel: "Explore safety",
+  },
   hero: {
     eyebrow: "Safe. Reliable. Always.",
     titleLine1: "Your Driver,",
@@ -14,51 +80,83 @@ export const publicContent = {
   features: [
     {
       icon: "Zap",
-      title: "Quick Bookings",
+      eyebrow: "Ownership",
+      title: "Your vehicle, your booking",
       description:
-        "Request a driving service in a few steps and get matched with an available driver.",
+        "Book a Driver for the vehicle you own, with pickup, destination, and timing in one clear flow.",
     },
     {
       icon: "ShieldCheck",
-      title: "Trusted Drivers",
-      description: "Drivers complete onboarding and document checks before going online.",
+      eyebrow: "Trust",
+      title: "Verified Drivers",
+      description:
+        "Drivers complete onboarding and document checks before accepting Trip requests.",
+    },
+    {
+      icon: "Route",
+      eyebrow: "Clarity",
+      title: "One shared Trip record",
+      description:
+        "Users and Drivers stay aligned on the same booking, status updates, vehicle details, and completion history.",
     },
     {
       icon: "Wallet",
-      title: "Affordable Pricing",
+      eyebrow: "Transparency",
+      title: "Clear fares upfront",
       description:
-        "See driver-service fare estimates before you confirm so you know what to expect.",
-    },
-    {
-      icon: "Headphones",
-      title: "24/7 Support",
-      description:
-        "Reach support through in-app channels when you need help with a trip.",
+        "Review the driving-service fare estimate before you confirm the Trip.",
     },
   ],
-  howItWorksSteps: [
-    {
-      step: "01",
-      title: "Add your vehicle",
-      description: "Register the car you own so a driver can operate it for your trip.",
-    },
-    {
-      step: "02",
-      title: "Book a driver",
-      description: "Set pickup, destination, timing, and the driving service you need.",
-    },
-    {
-      step: "03",
-      title: "Meet your driver",
-      description: "Your driver arrives and drives your vehicle to the destination.",
-    },
-    {
-      step: "04",
-      title: "Complete the trip",
-      description:
-        "Pay for the driving service, and both sides keep a shared trip record.",
-    },
-  ],
+  journeys: {
+    user: [
+      {
+        step: "01",
+        title: "Add your vehicle",
+        description: "Register the car you own so a Driver can operate it for your Trip.",
+      },
+      {
+        step: "02",
+        title: "Book a Driver",
+        description: "Set pickup, destination, timing, and the driving service you need.",
+      },
+      {
+        step: "03",
+        title: "Meet your Driver",
+        description: "Your Driver arrives and operates your vehicle to the destination.",
+      },
+      {
+        step: "04",
+        title: "Complete the Trip",
+        description:
+          "Pay for the driving service, and both sides keep a shared Trip record.",
+      },
+    ],
+    driver: [
+      {
+        step: "01",
+        title: "Register as a Driver",
+        description:
+          "Create your profile and submit the documents needed for verification.",
+      },
+      {
+        step: "02",
+        title: "Go online",
+        description: "Choose when you are available to receive Trip requests.",
+      },
+      {
+        step: "03",
+        title: "Review the request",
+        description:
+          "See pickup, destination, User vehicle, and fare details before accepting.",
+      },
+      {
+        step: "04",
+        title: "Complete the Trip",
+        description:
+          "Meet the User, operate their vehicle, and close out the shared Trip.",
+      },
+    ],
+  },
   userBenefits: [
     {
       title: "Easy driver booking",
@@ -88,33 +186,10 @@ export const publicContent = {
   driverRecruit: {
     title: "Drive, Earn, Grow",
     description:
-      "Join DriveX as a driver. Provide driving services for customers who bring their own vehicles — flexible hours and clear earnings.",
-    points: [
-      "Flexible hours",
-      "Weekly payouts (planned)",
-      "Bonuses & incentives (planned)",
-      "Driver support",
-    ],
+      "Join DriveX as a Driver. Provide driving services for Users who bring their own vehicles — flexible hours and clear earnings.",
+    points: ["Flexible hours", "Clear earnings records", "Driver support"],
     cta: "Join as a Driver",
   },
-  safetyHighlights: [
-    {
-      title: "Verified drivers",
-      description: "Identity and licence checks are part of driver onboarding.",
-    },
-    {
-      title: "Trip information",
-      description: "Shared booking and trip records for users and drivers.",
-    },
-    {
-      title: "User controls",
-      description: "Cancel and status flows designed to keep both sides informed.",
-    },
-    {
-      title: "Support channels",
-      description: "Contact and help pathways for issues during or after a trip.",
-    },
-  ],
   popularCities: {
     note: "Explore the places, landmarks, and everyday journeys that shape the DriveX experience.",
     cities: [
@@ -155,32 +230,41 @@ export const publicContent = {
       },
     ],
   },
-  testimonialsDemo: {
-    note: "Demo quotes for layout only — not verified customer reviews.",
+  experienceHighlights: {
+    note: "A clearer experience for every part of the Trip.",
     items: [
       {
-        quote: "Booking a driver for my own car was straightforward and easy to follow.",
-        name: "Demo User",
-        role: "Sample feedback",
+        title: "Your vehicle stays yours",
+        description:
+          "Book a Driver to operate the vehicle you own, with the Trip details you expect in one place.",
       },
       {
-        quote:
-          "I see the customer's vehicle details before I accept — that makes trips clear.",
-        name: "Demo Driver",
-        role: "Sample feedback",
+        title: "One shared Trip record",
+        description:
+          "Users and Drivers see the same booking, status updates, fare details, and completion history.",
+      },
+      {
+        title: "Clarity from start to finish",
+        description:
+          "Clear steps and visible status changes help everyone know what has happened and what comes next.",
       },
     ],
   },
   faq: [
     {
+      question: "What does DriveX book?",
+      answer:
+        "DriveX books a driving service. You bring and register your own vehicle; a Driver operates it for your Trip.",
+    },
+    {
       question: "How do I book a driver?",
       answer:
-        "Create an account, choose User, add your vehicle, then open Book a Driver to set pickup, destination, timing, and driving service. Confirm to start the search for a driver.",
+        "Create an account, choose User, add your vehicle, then open Book a Driver to set pickup, destination, timing, and driving service. Confirm to start the search for a Driver.",
     },
     {
       question: "Do I need my own vehicle?",
       answer:
-        "Yes. DriveX is a driver-booking platform. You register your vehicle; the driver provides the driving service.",
+        "Yes. DriveX is a driver-booking platform. You register your vehicle; the Driver provides the driving service.",
     },
     {
       question: "How do I cancel a booking?",
@@ -190,12 +274,17 @@ export const publicContent = {
     {
       question: "How do I become a driver?",
       answer:
-        "Sign up, verify with OTP, select Driver, then complete onboarding and verification documents. You do not need to register a vehicle to drive with DriveX.",
+        "Sign up, verify your phone, select Driver, then complete onboarding and verification documents. You do not need to register a vehicle to drive with DriveX.",
+    },
+    {
+      question: "What can a Driver see before accepting?",
+      answer:
+        "A Driver can review the pickup, destination, User vehicle details, fare estimate, and Trip information before accepting a request.",
     },
     {
       question: "How does payment work?",
       answer:
-        "Phase 1–3 use mock payments for the driving service only. Real payment providers will be integrated in a later phase.",
+        "Review the fare estimate before confirming. When the Trip is complete, the final fare and payment record are tied to that Trip.",
     },
     {
       question: "Can I schedule a driver?",
@@ -205,7 +294,7 @@ export const publicContent = {
     {
       question: "How do I contact support?",
       answer:
-        "Use the Contact page for product and partnership questions. In-app support expands with later releases.",
+        "Use the Contact page for product and partnership questions. Our team usually responds within one business day.",
     },
   ],
   about: {
@@ -216,35 +305,21 @@ export const publicContent = {
       "Build a reliable platform that makes booking a driver simple for users who bring their own vehicles.",
     vision:
       "Make every journey easier and more reliable through clear product design and trustworthy operations.",
-    stats: [
-      { value: "10K+", label: "Happy Riders" },
-      { value: "5K+", label: "Trusted Drivers" },
-      { value: "50K+", label: "Rides Completed" },
-      { value: "20+", label: "Cities" },
-    ],
-    statsNote:
-      "Illustrative targets for the product roadmap — not live production metrics.",
   },
   contact: {
     intro:
-      "Questions about DriveX, partnerships, or the product roadmap? Reach out — we usually respond within one business day.",
-    placeholders: {
-      phone: "+91 1800 000 000",
-      email: "hello@drivex.example",
-      address: "Bengaluru, India",
-      support: "Mon–Sun · 8:00 AM – 10:00 PM IST",
-    },
+      "Questions about DriveX or partnerships? Send us a message and we usually respond within one business day.",
   },
   driveWithUs: {
     heroTitle: "Earn by providing driving services",
     heroDescription:
-      "Drive with DriveX. Complete verification, go online, accept driver requests for customers' vehicles, and grow with shared trip and earnings records.",
+      "Drive with DriveX. Complete verification, go online, accept requests to drive Users' vehicles, and grow with shared Trip and earnings records.",
     why: [
       { title: "Flexible hours", description: "Go online when it works for you." },
       {
         title: "Clear trip history",
         description:
-          "The same trip users see — one shared record, including customer vehicle details.",
+          "The same Trip Users see — one shared record, including vehicle details.",
       },
       {
         title: "Earnings visibility",

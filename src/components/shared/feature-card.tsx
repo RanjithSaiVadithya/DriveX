@@ -3,11 +3,13 @@ import { cn } from "@/lib/utils";
 
 export function FeatureCard({
   icon: Icon,
+  eyebrow,
   title,
   description,
   className,
 }: {
   icon: LucideIcon;
+  eyebrow?: string;
   title: string;
   description: string;
   className?: string;
@@ -15,37 +17,22 @@ export function FeatureCard({
   return (
     <article
       className={cn(
-        "rounded-2xl border border-border/70 bg-warm-white p-6 shadow-soft transition-all hover:-translate-y-0.5 hover:shadow-medium",
+        "motion-lift border-border/70 bg-warm-white shadow-soft flex h-full flex-col rounded-2xl border p-6",
         className,
       )}
     >
-      <div className="flex size-12 items-center justify-center rounded-full bg-olive/10 text-olive">
+      <div className="bg-olive/10 text-olive flex size-12 items-center justify-center rounded-full">
         <Icon className="size-5" strokeWidth={1.75} aria-hidden />
       </div>
-      <h3 className="mt-4 text-lg font-semibold text-deep-navy">{title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
+      {eyebrow ? (
+        <p className="text-caption text-olive mt-5 font-semibold tracking-[0.14em] uppercase">
+          {eyebrow}
+        </p>
+      ) : null}
+      <h3 className="text-deep-navy mt-4 text-lg font-semibold">{title}</h3>
+      <p className="text-muted-foreground mt-2 flex-1 text-sm leading-relaxed">
+        {description}
+      </p>
     </article>
-  );
-}
-
-export function StatCard({
-  label,
-  value,
-  className,
-}: {
-  label: string;
-  value: string;
-  className?: string;
-}) {
-  return (
-    <div
-      className={cn(
-        "rounded-2xl border border-border/70 bg-warm-white p-5 text-center shadow-soft",
-        className,
-      )}
-    >
-      <p className="text-3xl font-extrabold tracking-tight text-olive">{value}</p>
-      <p className="mt-2 text-sm font-medium text-muted-foreground">{label}</p>
-    </div>
   );
 }
