@@ -40,10 +40,10 @@ export default function DriverSettingsPage() {
       <section className="space-y-3 rounded-2xl border border-border bg-warm-white p-5 shadow-soft">
         <h2 className="text-h3">Install app</h2>
         {isInstalled ? (
-          <p className="text-sm text-muted-foreground">Running as installed DriveX.</p>
+          <p className="text-sm text-muted-foreground">Running as installed DriverDosth.</p>
         ) : canNativeInstall ? (
           <Button type="button" onClick={() => void install()}>
-            Install DriveX
+            Install DriverDosth
           </Button>
         ) : availability === "ios-manual" ? (
           <p className="text-sm text-muted-foreground">

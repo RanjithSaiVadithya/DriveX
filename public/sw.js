@@ -1,7 +1,7 @@
-/* DriveX service worker — static shell only.
+/* DriverDosth service worker — static shell only.
  * NEVER cache /api/* or private JSON responses (bookings, trips, wallet, etc.).
  */
-const CACHE_VERSION = "drivex-shell-v1";
+const CACHE_VERSION = "driverdosth-shell-v1";
 const SHELL_URLS = ["/", "/offline", "/manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {

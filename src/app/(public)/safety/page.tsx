@@ -8,9 +8,9 @@ import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 
 export const metadata = buildPageMetadata({
-  title: { absolute: "DriveX Safety — Safe and Reliable Trips" },
+  title: { absolute: "DriverDosth Safety — Safe and Reliable Trips" },
   description:
-    "Learn how DriveX approaches Driver verification, Trip information, User controls, and support for safer Trips.",
+    "Learn how DriverDosth approaches Driver verification, Trip information, User controls, and support for safer Trips.",
   path: publicRoutes.safety,
 });
 
@@ -74,7 +74,7 @@ export default function SafetyPage() {
       <CTASection
         title="Travel with clearer information"
         primary={{ label: "Book a Driver", href: authRoutes.login }}
-        secondary={{ label: "Contact DriveX", href: publicRoutes.contact }}
+        secondary={{ label: "Contact DriverDosth", href: publicRoutes.contact }}
       />
     </main>
   );

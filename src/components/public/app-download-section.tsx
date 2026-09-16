@@ -46,14 +46,14 @@ function InstallCta() {
 
   if (isInstalled) {
     return (
-      <p className="text-muted-foreground text-sm">DriveX is installed on this device.</p>
+      <p className="text-muted-foreground text-sm">DriverDosth is installed on this device.</p>
     );
   }
 
   if (canNativeInstall) {
     return (
       <Button type="button" onClick={() => void install()}>
-        Install DriveX
+        Install DriverDosth
       </Button>
     );
   }
@@ -61,7 +61,7 @@ function InstallCta() {
   if (availability === "ios-manual") {
     return (
       <p className="text-muted-foreground max-w-sm text-sm">
-        On iPhone: open Share → <strong>Add to Home Screen</strong> to use DriveX like an
+        On iPhone: open Share → <strong>Add to Home Screen</strong> to use DriverDosth like an
         app.
       </p>
     );
@@ -69,7 +69,7 @@ function InstallCta() {
 
   return (
     <Link href="/login" className={cn(buttonVariants())}>
-      Use DriveX in your browser
+      Use DriverDosth in your browser
     </Link>
   );
 }
@@ -120,11 +120,11 @@ export function AppDownloadSection({
     >
       <PageContainer className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
         <div className="max-w-lg">
-          <h2 className="text-h2">Install DriveX</h2>
+          <h2 className="text-h2">Install DriverDosth</h2>
           <p className="text-muted-foreground mt-3">
             {hasAndroid || hasIos
-              ? "Get DriveX from your store, or install it as an app on this device."
-              : "Install DriveX on your device for faster booking, or continue in your browser today."}
+              ? "Get DriverDosth from your store, or install it as an app on this device."
+              : "Install DriverDosth on your device for faster booking, or continue in your browser today."}
           </p>
         </div>
         <div className="flex flex-col items-start gap-3">

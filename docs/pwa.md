@@ -1,6 +1,6 @@
-# DriveX PWA
+# DriverDosth PWA
 
-DriveX is an installable Progressive Web App on top of the existing Next.js App Router application.
+DriverDosth is an installable Progressive Web App on top of the existing Next.js App Router application.
 
 ## Manifest
 

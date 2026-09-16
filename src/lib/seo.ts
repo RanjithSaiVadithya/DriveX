@@ -52,7 +52,7 @@ export function buildPageMetadata({
 
 export function privatePageMetadata(
   title: string,
-  description = "Private DriveX application area.",
+  description = "Private DriverDosth application area.",
 ): Metadata {
   return buildPageMetadata({
     title,

@@ -1,5 +1,5 @@
 {
-  "name": "drivex-mock-server",
+  "name": "driverdosth-mock-server",
   "private": true,
   "scripts": {
     "start": "node server.js"

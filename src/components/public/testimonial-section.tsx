@@ -9,7 +9,7 @@ export function ExperienceHighlights() {
     <section className="public-section bg-cream">
       <PageContainer>
         <SectionHeading
-          eyebrow="The DriveX difference"
+          eyebrow="The DriverDosth difference"
           title="A clearer way to book a Driver"
           description={experienceHighlights.note}
           align="center"

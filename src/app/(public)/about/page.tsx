@@ -8,9 +8,9 @@ import { HeartHandshake, Route, Target, Users, Eye } from "lucide-react";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 
 export const metadata = buildPageMetadata({
-  title: { absolute: "About DriveX — Our Mission and Vision" },
+  title: { absolute: "About DriverDosth — Our Mission and Vision" },
   description:
-    "Learn about DriveX — our mission to make booking a Driver simple for Users on one shared platform.",
+    "Learn about DriverDosth — our mission to make booking a Driver simple for Users on one shared platform.",
   path: publicRoutes.about,
 });
 
@@ -125,7 +125,7 @@ export default function AboutPage() {
       </section>
 
       <CTASection
-        title="Join the DriveX platform"
+        title="Join the DriverDosth platform"
         description="Whether you want to book a Driver or provide driving services, start with a verified account."
         primary={{ label: "Book a Driver", href: authRoutes.login }}
         secondary={{ label: "Drive With Us", href: publicRoutes.driveWithUs }}

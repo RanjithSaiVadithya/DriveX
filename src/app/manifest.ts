@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 
-/** Web App Manifest — DriveX PWA installability */
+/** Web App Manifest — DriverDosth PWA installability */
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteConfig.name,

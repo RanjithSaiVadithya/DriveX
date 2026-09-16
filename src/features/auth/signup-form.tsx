@@ -73,7 +73,7 @@ function SignupFormInner() {
       ))}
       {preferredRole === "DRIVER" ? (
         <p className="rounded-md bg-olive/10 px-3 py-2 text-sm text-deep-navy">
-          You&apos;re signing up to drive with DriveX.
+          You&apos;re signing up to drive with DriverDosth.
         </p>
       ) : null}
       {form.formState.errors.root ? (

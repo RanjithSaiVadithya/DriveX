@@ -8,9 +8,9 @@ import { ScrollReveal } from "@/components/shared/scroll-reveal";
 import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 
 export const metadata = buildPageMetadata({
-  title: { absolute: "How DriveX Works — Book a Driver in Simple Steps" },
+  title: { absolute: "How DriverDosth Works — Book a Driver in Simple Steps" },
   description:
-    "See how DriveX works: add your vehicle, book a driver, and complete a trip where the driver operates your car.",
+    "See how DriverDosth works: add your vehicle, book a driver, and complete a trip where the driver operates your car.",
   path: publicRoutes.howItWorks,
 });
 
@@ -48,7 +48,7 @@ export default function HowItWorksPage() {
 
       <CTASection
         tone="navy"
-        title="Start your DriveX journey"
+        title="Start your DriverDosth journey"
         description="Create an account, verify your phone, and choose the role that fits your journey."
         primary={{ label: "Get started", href: authRoutes.signup }}
         secondary={{ label: "Safety overview", href: publicRoutes.safety }}

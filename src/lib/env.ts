@@ -29,7 +29,7 @@ if (!parsed.success && process.env.NODE_ENV === "development") {
 export const env = {
   appUrl: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
   apiBaseUrl: process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:3001",
-  appName: process.env.NEXT_PUBLIC_APP_NAME ?? "DriveX",
+  appName: process.env.NEXT_PUBLIC_APP_NAME ?? "DriverDosth",
   googleSiteVerification:
     process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
   androidAppUrl: process.env.NEXT_PUBLIC_ANDROID_APP_URL || undefined,

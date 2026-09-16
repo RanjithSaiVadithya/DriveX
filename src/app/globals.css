@@ -4,7 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* DriveX design tokens — white / forest green / charcoal */
+/* DriverDosth design tokens — white / forest green / charcoal */
 :root {
   --cream: #f5f7f5;
   --warm-white: #ffffff;
@@ -65,7 +65,7 @@
   --leading-heading: 1.2;
   --leading-body: 1.6;
   --tracking-tight: -0.02em;
-  --public-header-height: 4.25rem;
+  --public-header-height: clamp(4.75rem, 11vw, 5.5rem);
   --public-section-space: clamp(3rem, 6vw, 4.5rem);
   --public-section-space-compact: clamp(2.5rem, 5vw, 3.5rem);
 }
@@ -245,7 +245,7 @@
     content: "";
     transform: scaleX(0);
     transform-origin: left center;
-    animation: drivex-nav-underline-draw 480ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: driverdosth-nav-underline-draw 480ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
   .public-section {
     padding-block: var(--public-section-space);
@@ -260,7 +260,7 @@
     box-shadow: var(--shadow-medium);
   }
   .motion-enter {
-    animation: drivex-enter 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: driverdosth-enter 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
   .motion-enter-delay-1 {
     animation-delay: 100ms;
@@ -273,7 +273,7 @@
     transform: translateY(1rem);
   }
   .scroll-reveal-visible {
-    animation: drivex-scroll-reveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: driverdosth-scroll-reveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
     animation-delay: var(--reveal-delay, 0ms);
   }
   .safety-story {
@@ -399,13 +399,21 @@
     grid-area: auto;
   }
   .safety-product-step-change {
-    animation: drivex-safety-step-change 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: driverdosth-safety-step-change 360ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
   .safety-product-preview {
     max-width: 20rem;
     justify-self: center;
   }
   @media (max-width: 63.999rem) {
+    .safety-story {
+      height: auto;
+    }
+    .safety-story-sticky,
+    .safety-story[data-story-ready="false"] .safety-story-sticky {
+      position: static;
+      min-height: 0;
+    }
     .safety-story-stage {
       grid-template-columns: minmax(0, 1fr);
       gap: 1.5rem;
@@ -416,31 +424,46 @@
     .safety-product-preview {
       width: min(100%, 20rem);
     }
+    .safety-story[data-story-ready="true"] .safety-story-card-stack {
+      display: flex;
+      min-height: 0;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .safety-story[data-story-ready="true"] .safety-story-step {
+      grid-area: auto;
+      pointer-events: auto;
+      opacity: 0.62;
+      transform: none;
+    }
+    .safety-story[data-story-ready="true"] .safety-story-step-active {
+      opacity: 1;
+    }
   }
   .hero-orbit {
-    animation: drivex-orbit-glow 7s ease-in-out infinite;
+    animation: driverdosth-orbit-glow 7s ease-in-out infinite;
   }
   .hero-orbit-reverse {
     animation-delay: -2s;
     animation-duration: 8.5s;
   }
   .hero-car-enter {
-    animation: drivex-car-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation: driverdosth-car-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
   .hero-car-idle {
-    animation: drivex-car-vibrate 220ms steps(2, end) infinite;
+    animation: driverdosth-car-vibrate 220ms steps(2, end) infinite;
     transform-origin: center bottom;
   }
   .hero-wheel {
     transform-box: fill-box;
     transform-origin: center;
-    animation: drivex-wheel-spin 560ms linear infinite;
+    animation: driverdosth-wheel-spin 560ms linear infinite;
   }
   .hero-motion-lines {
-    animation: drivex-road-lines 800ms linear infinite;
+    animation: driverdosth-road-lines 800ms linear infinite;
   }
   .hero-light-pulse {
-    animation: drivex-light-pulse 1.4s ease-in-out infinite;
+    animation: driverdosth-light-pulse 1.4s ease-in-out infinite;
   }
   .motion-lift {
     transition:
@@ -453,7 +476,7 @@
   }
 }
 
-@keyframes drivex-enter {
+@keyframes driverdosth-enter {
   from {
     opacity: 0;
     transform: translateY(1rem) scale(0.98);
@@ -464,7 +487,7 @@
   }
 }
 
-@keyframes drivex-scroll-reveal {
+@keyframes driverdosth-scroll-reveal {
   from {
     opacity: 0;
     transform: translateY(1rem);
@@ -475,7 +498,7 @@
   }
 }
 
-@keyframes drivex-safety-step-change {
+@keyframes driverdosth-safety-step-change {
   from {
     opacity: 0.55;
     transform: translateY(0.35rem);
@@ -486,7 +509,7 @@
   }
 }
 
-@keyframes drivex-orbit-glow {
+@keyframes driverdosth-orbit-glow {
   0%,
   100% {
     opacity: 0.72;
@@ -496,7 +519,7 @@
   }
 }
 
-@keyframes drivex-car-enter {
+@keyframes driverdosth-car-enter {
   from {
     opacity: 0;
     transform: translateY(1rem) scale(0.96);
@@ -507,7 +530,7 @@
   }
 }
 
-@keyframes drivex-car-vibrate {
+@keyframes driverdosth-car-vibrate {
   0%,
   100% {
     transform: translateY(0);
@@ -517,13 +540,13 @@
   }
 }
 
-@keyframes drivex-wheel-spin {
+@keyframes driverdosth-wheel-spin {
   to {
     transform: rotate(360deg);
   }
 }
 
-@keyframes drivex-road-lines {
+@keyframes driverdosth-road-lines {
   from {
     stroke-dashoffset: 28;
   }
@@ -532,7 +555,7 @@
   }
 }
 
-@keyframes drivex-nav-underline-draw {
+@keyframes driverdosth-nav-underline-draw {
   from {
     opacity: 0;
     transform: scaleX(0);
@@ -543,7 +566,7 @@
   }
 }
 
-@keyframes drivex-light-pulse {
+@keyframes driverdosth-light-pulse {
   0%,
   100% {
     opacity: 0.65;

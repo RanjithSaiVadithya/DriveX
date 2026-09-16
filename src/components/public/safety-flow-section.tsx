@@ -30,6 +30,7 @@ const trustSteps = publicContent.safetyFlow.steps;
 export function SafetyFlowSection({ compact = false }: { compact?: boolean }) {
   const content = publicContent.safetyFlow;
   const storyRef = useRef<HTMLDivElement>(null);
+  const cardStackRef = useRef<HTMLDivElement>(null);
   const [activeStep, setActiveStep] = useState(0);
   const [storyReady, setStoryReady] = useState(false);
 
@@ -77,6 +78,35 @@ export function SafetyFlowSection({ compact = false }: { compact?: boolean }) {
       window.removeEventListener("scroll", updateActiveStep);
       window.removeEventListener("resize", updateActiveStep);
     };
+  }, []);
+
+  useEffect(() => {
+    const cardStack = cardStackRef.current;
+    if (
+      !cardStack ||
+      !("IntersectionObserver" in window) ||
+      window.matchMedia("(min-width: 64rem)").matches
+    ) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        const nextStep = visibleEntry?.target.getAttribute("data-safety-step");
+
+        if (nextStep) setActiveStep(Number(nextStep));
+      },
+      { threshold: [0.5, 0.75], rootMargin: "-15% 0px -15% 0px" },
+    );
+
+    cardStack
+      .querySelectorAll<HTMLElement>("[data-safety-step]")
+      .forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect();
   }, []);
 
   const handleStepKeyDown = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
@@ -153,7 +183,7 @@ export function SafetyFlowSection({ compact = false }: { compact?: boolean }) {
                   ))}
                 </div>
 
-                <div className="safety-story-card-stack" aria-live="polite">
+                <div ref={cardStackRef} className="safety-story-card-stack" aria-live="polite">
                   {trustSteps.map(
                     ({ number, icon, title, description, status }, index) => {
                       const Icon = stepIconMap[icon];
@@ -161,6 +191,7 @@ export function SafetyFlowSection({ compact = false }: { compact?: boolean }) {
                       return (
                         <article
                           key={title}
+                          data-safety-step={index}
                           className={cn(
                             "safety-story-step border-border/70 bg-cream shadow-soft rounded-3xl border p-5 sm:p-7",
                             storyReady &&

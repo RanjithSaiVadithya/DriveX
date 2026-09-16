@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { trackEvent } from "@/lib/analytics";
 import { APP_VERSION } from "@/lib/app-version";
 
-/** Registers the DriveX service worker and surfaces controlled updates. */
+/** Registers the DriverDosth service worker and surfaces controlled updates. */
 export function useServiceWorker() {
   const [waiting, setWaiting] = useState<ServiceWorker | null>(null);
 
@@ -62,7 +62,7 @@ export function useServiceWorker() {
   function applyUpdate() {
     if (!waiting) return;
     waiting.postMessage({ type: "SKIP_WAITING" });
-    toast.message("Updating DriveX…");
+    toast.message("Updating DriverDosth…");
   }
 
   return { updateAvailable: Boolean(waiting), applyUpdate };

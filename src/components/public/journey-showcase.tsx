@@ -51,7 +51,7 @@ export function JourneyShowcase({ userSteps, driverSteps }: JourneyShowcaseProps
       <div
         className="bg-cream border-border/70 flex w-fit rounded-full border p-1"
         role="tablist"
-        aria-label="Choose a DriveX journey"
+        aria-label="Choose a DriverDosth journey"
       >
         <button
           type="button"

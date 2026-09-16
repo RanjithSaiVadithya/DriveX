@@ -8,7 +8,7 @@ export function OfflinePageClient() {
   return (
     <main className="mx-auto flex min-h-full max-w-md flex-col items-center justify-center gap-4 px-6 py-16 text-center">
       <p className="text-caption font-semibold uppercase tracking-wider text-orange">
-        DriveX
+        DriverDosth
       </p>
       <h1 className="text-h2 text-deep-navy">You appear to be offline</h1>
       <p className="text-muted-foreground">

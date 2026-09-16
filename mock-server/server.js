@@ -1,5 +1,5 @@
 /**
- * DriveX mock API server (JSON Server + custom contract routes).
+ * DriverDosth mock API server (JSON Server + custom contract routes).
  * Development only — not production authentication.
  */
 const jsonServer = require("json-server");
@@ -9,7 +9,7 @@ const fs = require("fs");
 const PORT = process.env.MOCK_API_PORT || 3001;
 const SOURCE_DB_PATH = path.join(__dirname, "db.json");
 const DB_PATH = process.env.VERCEL
-  ? path.join("/tmp", "drivex-db.json")
+  ? path.join("/tmp", "driverdosth-db.json")
   : SOURCE_DB_PATH;
 const MOCK_OTP = "123456";
 
@@ -691,7 +691,7 @@ function completeTripSideEffects(trip) {
     recipientRole: "USER",
     type: "TRIP_UPDATE",
     title: "Trip completed",
-    message: "Your trip has been completed. Thank you for booking with DriveX.",
+    message: "Your trip has been completed. Thank you for booking with DriverDosth.",
     data: { bookingId: trip.bookingId, tripId: trip.id },
   });
 
@@ -1606,7 +1606,7 @@ server.use("/api/raw", router);
 
 if (require.main === module) {
   server.listen(PORT, () => {
-    console.log(`DriveX mock API running at http://localhost:${PORT}`);
+    console.log(`DriverDosth mock API running at http://localhost:${PORT}`);
     console.log(`Mock OTP (dev only): ${MOCK_OTP}`);
     console.log(`Test users: user@example.test / driver@example.test (password123)`);
   });

@@ -36,7 +36,7 @@ function HeroCarVisual() {
               <stop offset="1" stopColor="#8c9f95" />
             </linearGradient>
           </defs>
-          <title>DriveX vehicle</title>
+          <title>DriverDosth vehicle</title>
           <ellipse cx="240" cy="300" rx="140" ry="14" fill="rgba(18,26,31,0.12)" />
           <g className="hero-motion-lines" aria-hidden>
             <path

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
-import { DriveXLogo } from "@/components/shared/logo";
+import { DriverDosthLogo } from "@/components/shared/logo";
 import { PageContainer } from "@/components/shared/page-container";
 import { buttonVariants } from "@/components/ui/button";
 import {
@@ -29,8 +29,8 @@ export function SiteHeader() {
 
   return (
     <header className="border-border/60 bg-warm-white/95 sticky top-0 z-40 border-b backdrop-blur-md">
-      <PageContainer className="flex h-[var(--public-header-height)] items-center justify-between gap-4">
-        <DriveXLogo />
+      <PageContainer className="flex h-[var(--public-header-height)] min-h-[var(--public-header-height)] items-center justify-between gap-3 sm:gap-4">
+        <DriverDosthLogo showTagline={false} className="shrink min-w-0" />
 
         <nav aria-label="Primary" className="hidden items-center gap-0.5 lg:flex">
           {publicNavItems.map((item) => {
@@ -89,7 +89,7 @@ export function SiteHeader() {
           >
             <SheetHeader className="border-border/70 border-b px-5 py-4">
               <SheetTitle className="text-left">
-                <DriveXLogo asLink={false} size="sm" />
+                <DriverDosthLogo asLink={false} showTagline={false} />
               </SheetTitle>
             </SheetHeader>
             <nav aria-label="Mobile" className="mt-6 flex flex-col gap-1">

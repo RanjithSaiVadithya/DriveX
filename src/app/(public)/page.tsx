@@ -28,9 +28,9 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export const metadata = buildPageMetadata({
-  title: { absolute: "DriveX — Safe, Reliable Trips" },
+  title: { absolute: "DriverDosth — Safe, Reliable Trips" },
   description:
-    "Book verified Drivers with DriveX. Safe, reliable driving services with transparent pricing and shared Trip records for Users and Drivers.",
+    "Book verified Drivers with DriverDosth. Safe, reliable driving services with transparent pricing and shared Trip records for Users and Drivers.",
   path: publicRoutes.home,
 });
 
@@ -55,7 +55,7 @@ export default function HomePage() {
         <section className="public-section bg-cream">
           <PageContainer>
             <SectionHeading
-              eyebrow="Why DriveX"
+              eyebrow="Why DriverDosth"
               title="Built for everyday trips"
               description="A clean booking experience for Users and a clear Trip workflow for Drivers — on one shared platform."
               align="center"

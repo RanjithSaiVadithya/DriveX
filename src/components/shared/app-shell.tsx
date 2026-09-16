@@ -16,7 +16,7 @@ import {
   Wallet,
 } from "lucide-react";
 import { RequireRole } from "@/components/shared/require-auth";
-import { DriveXLogo } from "@/components/shared/logo";
+import { DriverDosthLogo } from "@/components/shared/logo";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/use-auth";
 import { useNotifications } from "@/hooks/use-notifications";
@@ -74,7 +74,7 @@ export function UserShell({ children }: { children: ReactNode }) {
       <div className="flex min-h-full flex-1 flex-col bg-cream md:flex-row">
         <aside className="hidden w-60 shrink-0 flex-col bg-deep-navy text-warm-white md:flex">
           <div className="border-b border-white/10 px-5 py-5">
-            <DriveXLogo variant="light" size="sm" href={userRoutes.home} />
+            <DriverDosthLogo variant="light" size="sm" href={userRoutes.home} />
             <p className="mt-1 text-xs text-warm-beige/75">User app</p>
           </div>
           <nav aria-label="User" className="flex flex-1 flex-col gap-1 p-3">
@@ -128,7 +128,7 @@ export function UserShell({ children }: { children: ReactNode }) {
         <div className="flex min-w-0 flex-1 flex-col pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-0">
           <header className="sticky top-0 z-30 flex items-center justify-between border-b border-border/80 bg-warm-white/95 px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] backdrop-blur md:px-6 md:pt-3">
             <div className="md:hidden">
-              <DriveXLogo size="sm" href={userRoutes.home} />
+              <DriverDosthLogo size="sm" href={userRoutes.home} />
             </div>
             <p className="hidden text-sm text-muted-foreground md:block">
               Welcome back{user?.name ? `, ${user.name.split(" ")[0]}` : ""}
@@ -199,7 +199,7 @@ export function DriverShell({ children }: { children: ReactNode }) {
       <div className="flex min-h-full flex-1 flex-col bg-cream md:flex-row">
         <aside className="hidden w-60 shrink-0 flex-col bg-deep-navy text-warm-white md:flex">
           <div className="border-b border-white/10 px-5 py-5">
-            <DriveXLogo variant="light" size="sm" href={driverRoutes.home} />
+            <DriverDosthLogo variant="light" size="sm" href={driverRoutes.home} />
             <p className="mt-1 text-xs text-warm-beige/75">Driver app</p>
           </div>
           <nav aria-label="Driver" className="flex flex-1 flex-col gap-1 p-3">
@@ -246,10 +246,10 @@ export function DriverShell({ children }: { children: ReactNode }) {
         <div className="flex min-w-0 flex-1 flex-col pb-[calc(5rem+env(safe-area-inset-bottom))] md:pb-0">
           <header className="sticky top-0 z-20 flex items-center justify-between border-b border-border bg-warm-white px-4 py-3 pt-[max(0.75rem,env(safe-area-inset-top))] md:px-8 md:pt-3">
             <div className="md:hidden">
-              <DriveXLogo size="sm" href={driverRoutes.home} />
+              <DriverDosthLogo size="sm" href={driverRoutes.home} />
             </div>
             <p className="hidden text-sm font-semibold text-deep-navy md:block">
-              DriveX Driver
+              DriverDosth Driver
             </p>
             <div className="flex items-center gap-2">
               <Link

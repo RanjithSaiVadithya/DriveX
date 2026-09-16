@@ -12,7 +12,7 @@ const publicPaths = [
 for (const path of publicPaths) {
   test(`public page renders: ${path}`, async ({ page }) => {
     await page.goto(path);
-    await expect(page.getByRole("link", { name: /DriveX|Drive/i }).first()).toBeVisible();
+    await expect(page.getByRole("link", { name: /DriverDosth|Driver/i }).first()).toBeVisible();
     await expect(page.locator("h1").first()).toBeVisible();
   });
 }

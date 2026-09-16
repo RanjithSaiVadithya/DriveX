@@ -186,12 +186,12 @@ export const publicContent = {
   driverRecruit: {
     title: "Drive, Earn, Grow",
     description:
-      "Join DriveX as a Driver. Provide driving services for Users who bring their own vehicles — flexible hours and clear earnings.",
+      "Join DriverDosth as a Driver. Provide driving services for Users who bring their own vehicles — flexible hours and clear earnings.",
     points: ["Flexible hours", "Clear earnings records", "Driver support"],
     cta: "Join as a Driver",
   },
   popularCities: {
-    note: "Explore the places, landmarks, and everyday journeys that shape the DriveX experience.",
+    note: "Explore the places, landmarks, and everyday journeys that shape the DriverDosth experience.",
     cities: [
       {
         name: "Bengaluru",
@@ -252,9 +252,9 @@ export const publicContent = {
   },
   faq: [
     {
-      question: "What does DriveX book?",
+      question: "What does DriverDosth book?",
       answer:
-        "DriveX books a driving service. You bring and register your own vehicle; a Driver operates it for your Trip.",
+        "DriverDosth books a driving service. You bring and register your own vehicle; a Driver operates it for your Trip.",
     },
     {
       question: "How do I book a driver?",
@@ -264,7 +264,7 @@ export const publicContent = {
     {
       question: "Do I need my own vehicle?",
       answer:
-        "Yes. DriveX is a driver-booking platform. You register your vehicle; the Driver provides the driving service.",
+        "Yes. DriverDosth is a driver-booking platform. You register your vehicle; the Driver provides the driving service.",
     },
     {
       question: "How do I cancel a booking?",
@@ -274,7 +274,7 @@ export const publicContent = {
     {
       question: "How do I become a driver?",
       answer:
-        "Sign up, verify your phone, select Driver, then complete onboarding and verification documents. You do not need to register a vehicle to drive with DriveX.",
+        "Sign up, verify your phone, select Driver, then complete onboarding and verification documents. You do not need to register a vehicle to drive with DriverDosth.",
     },
     {
       question: "What can a Driver see before accepting?",
@@ -298,9 +298,9 @@ export const publicContent = {
     },
   ],
   about: {
-    heroTitle: "About DriveX",
+    heroTitle: "About DriverDosth",
     intro:
-      "DriveX is a driver-booking platform. Users own the vehicle; drivers provide the driving service. Bookings and trips are shared domain records — not duplicated silos. We build for clarity, reliability, and safer everyday trips.",
+      "DriverDosth is a driver-booking platform. Users own the vehicle; drivers provide the driving service. Bookings and trips are shared domain records — not duplicated silos. We build for clarity, reliability, and safer everyday trips.",
     mission:
       "Build a reliable platform that makes booking a driver simple for users who bring their own vehicles.",
     vision:
@@ -308,12 +308,12 @@ export const publicContent = {
   },
   contact: {
     intro:
-      "Questions about DriveX or partnerships? Send us a message and we usually respond within one business day.",
+      "Questions about DriverDosth or partnerships? Send us a message and we usually respond within one business day.",
   },
   driveWithUs: {
     heroTitle: "Earn by providing driving services",
     heroDescription:
-      "Drive with DriveX. Complete verification, go online, accept requests to drive Users' vehicles, and grow with shared Trip and earnings records.",
+      "Drive with DriverDosth. Complete verification, go online, accept requests to drive Users' vehicles, and grow with shared Trip and earnings records.",
     why: [
       { title: "Flexible hours", description: "Go online when it works for you." },
       {
@@ -348,7 +348,7 @@ export const publicContent = {
   },
   footer: {
     description:
-      "DriveX connects users with drivers who drive the user's own vehicle — safe, reliable driving service with clear trip records.",
+      "DriverDosth connects users with drivers who drive the user's own vehicle — safe, reliable driving service with clear trip records.",
   },
 } as const;
 

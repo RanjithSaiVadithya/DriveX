@@ -11,10 +11,10 @@ describe("PWA / platform helpers", () => {
     vi.unstubAllGlobals();
   });
 
-  it("manifest exposes DriveX standalone metadata", () => {
+  it("manifest exposes DriverDosth standalone metadata", () => {
     const m = manifest();
-    expect(m.name).toBe("DriveX");
-    expect(m.short_name).toBe("DriveX");
+    expect(m.name).toBe("DriverDosth");
+    expect(m.short_name).toBe("DriverDosth");
     expect(m.display).toBe("standalone");
     expect(m.theme_color).toBe("#5c6b3a");
     expect(m.background_color).toBe("#f7f3eb");

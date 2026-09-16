@@ -1,8 +1,8 @@
-# DriveX mobile & Android readiness
+# DriverDosth mobile & Android readiness
 
 ## One codebase
 
-DriveX remains a single Next.js application with role routes:
+DriverDosth remains a single Next.js application with role routes:
 
 - `/user/*`
 - `/driver/*`
@@ -23,7 +23,7 @@ Next.js **16** in this repo uses a **Node server** (`next start`), not `output: 
 
 Therefore **Capacitor static asset embedding is not compatible without changing the deployment model**.
 
-Recommended Android path for DriveX:
+Recommended Android path for DriverDosth:
 
 1. Host the production Next.js app (HTTPS)
 2. Wrap that URL in a thin WebView / Trusted Web Activity / Capacitor `server.url` configuration
@@ -31,7 +31,7 @@ Recommended Android path for DriveX:
 
 Do **not** invent a Play Store package ID until product decides one.
 
-Package ID decision required later, e.g. `com.drivex.app` — not chosen in Phase 5.
+Package ID decision required later, e.g. `com.driverdosth.app` — not chosen in Phase 5.
 
 ## Deep links
 

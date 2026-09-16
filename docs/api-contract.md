@@ -1,8 +1,8 @@
-# DriveX API Contract
+# DriverDosth API Contract
 
 Frontend ↔ mock backend contract. Replace JSON Server later without rewriting UI.
 
-**Domain:** DriveX is a driver-booking platform. Users own/register vehicles
+**Domain:** DriverDosth is a driver-booking platform. Users own/register vehicles
 (`UserVehicle`). Drivers provide driving service only — they do not own platform
 vehicles. `Booking.userVehicleId` and `Trip.userVehicleId` reference the customer's
 vehicle.

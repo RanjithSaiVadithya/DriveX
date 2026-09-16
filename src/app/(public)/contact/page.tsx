@@ -6,9 +6,9 @@ import { publicRoutes } from "@/config/routes";
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 
 export const metadata = buildPageMetadata({
-  title: { absolute: "Contact DriveX — We're Here to Help" },
+  title: { absolute: "Contact DriverDosth — We're Here to Help" },
   description:
-    "Contact DriveX for product questions and partnership enquiries. Send a message through our contact form.",
+    "Contact DriverDosth for product questions and partnership enquiries. Send a message through our contact form.",
   path: publicRoutes.contact,
 });
 

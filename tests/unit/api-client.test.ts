@@ -33,7 +33,7 @@ describe("api client", () => {
     });
     vi.stubGlobal("fetch", fetchMock);
     localStorage.setItem(
-      "drivex_session",
+      "driverdosth_session",
       JSON.stringify({
         state: { session: { token: "persist-token", user: { id: "1" } } },
         version: 0,
@@ -44,7 +44,7 @@ describe("api client", () => {
     expect(fetchMock.mock.calls[0][1].headers.Authorization).toBe(
       "Bearer persist-token",
     );
-    localStorage.removeItem("drivex_session");
+    localStorage.removeItem("driverdosth_session");
   });
 
   it("maps HTTP errors to AppError", async () => {

@@ -5272,7 +5272,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for riding with DriveX.",
+      "message": "Your trip has been completed. Thank you for riding with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787740751398",
@@ -5453,7 +5453,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for riding with DriveX.",
+      "message": "Your trip has been completed. Thank you for riding with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787742014850",
@@ -5634,7 +5634,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for riding with DriveX.",
+      "message": "Your trip has been completed. Thank you for riding with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787742263004",
@@ -5815,7 +5815,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for riding with DriveX.",
+      "message": "Your trip has been completed. Thank you for riding with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787742353970",
@@ -6038,7 +6038,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for riding with DriveX.",
+      "message": "Your trip has been completed. Thank you for riding with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787742728702",
@@ -6261,7 +6261,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for riding with DriveX.",
+      "message": "Your trip has been completed. Thank you for riding with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787742821601",
@@ -6484,7 +6484,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for riding with DriveX.",
+      "message": "Your trip has been completed. Thank you for riding with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787742964233",
@@ -6707,7 +6707,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for riding with DriveX.",
+      "message": "Your trip has been completed. Thank you for riding with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787743008934",
@@ -6792,7 +6792,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for riding with DriveX.",
+      "message": "Your trip has been completed. Thank you for riding with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787743013600",
@@ -7154,7 +7154,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for riding with DriveX.",
+      "message": "Your trip has been completed. Thank you for riding with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787744429064",
@@ -7461,7 +7461,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for booking with DriveX.",
+      "message": "Your trip has been completed. Thank you for booking with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787744947048",
@@ -7656,7 +7656,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for booking with DriveX.",
+      "message": "Your trip has been completed. Thank you for booking with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787744953764",
@@ -7769,7 +7769,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for booking with DriveX.",
+      "message": "Your trip has been completed. Thank you for booking with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787744958432",
@@ -7895,7 +7895,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for booking with DriveX.",
+      "message": "Your trip has been completed. Thank you for booking with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787745046161",
@@ -8063,7 +8063,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for booking with DriveX.",
+      "message": "Your trip has been completed. Thank you for booking with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787745054861",
@@ -8189,7 +8189,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for booking with DriveX.",
+      "message": "Your trip has been completed. Thank you for booking with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787745081178",
@@ -8357,7 +8357,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for booking with DriveX.",
+      "message": "Your trip has been completed. Thank you for booking with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787745086960",
@@ -8552,7 +8552,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for booking with DriveX.",
+      "message": "Your trip has been completed. Thank you for booking with DriverDosth.",
       "read": true,
       "data": {
         "bookingId": "booking-1787745093661",
@@ -8665,7 +8665,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for booking with DriveX.",
+      "message": "Your trip has been completed. Thank you for booking with DriverDosth.",
       "read": false,
       "data": {
         "bookingId": "booking-1787745098344",
@@ -8791,7 +8791,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for booking with DriveX.",
+      "message": "Your trip has been completed. Thank you for booking with DriverDosth.",
       "read": false,
       "data": {
         "bookingId": "booking-1787746388910",
@@ -8959,7 +8959,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for booking with DriveX.",
+      "message": "Your trip has been completed. Thank you for booking with DriverDosth.",
       "read": false,
       "data": {
         "bookingId": "booking-1787746396976",
@@ -9210,7 +9210,7 @@
       "recipientRole": "USER",
       "type": "TRIP_UPDATE",
       "title": "Trip completed",
-      "message": "Your trip has been completed. Thank you for booking with DriveX.",
+      "message": "Your trip has been completed. Thank you for booking with DriverDosth.",
       "read": false,
       "data": {
         "bookingId": "booking-1787746408209",

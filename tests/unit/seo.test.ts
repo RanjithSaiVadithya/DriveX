@@ -6,12 +6,12 @@ import sitemap from "@/app/sitemap";
 describe("SEO foundation", () => {
   it("builds unique homepage metadata with index", () => {
     const meta = buildPageMetadata({
-      title: { absolute: "DriveX — Safe, Reliable Rides" },
+      title: { absolute: "DriverDosth — Safe, Reliable Rides" },
       description: "Safe rides",
       path: "/",
       index: true,
     });
-    expect(meta.title).toEqual({ absolute: "DriveX — Safe, Reliable Rides" });
+    expect(meta.title).toEqual({ absolute: "DriverDosth — Safe, Reliable Rides" });
     expect(meta.robots).toMatchObject({ index: true, follow: true });
     expect(meta.alternates?.canonical).toBeTruthy();
   });

@@ -12,9 +12,9 @@ import { DriverDashboardPreview } from "@/components/public/driver-dashboard-pre
 import { ScrollReveal } from "@/components/shared/scroll-reveal";
 
 export const metadata = buildPageMetadata({
-  title: { absolute: "Drive With DriveX — Earn on Your Schedule" },
+  title: { absolute: "Drive With DriverDosth — Earn on Your Schedule" },
   description:
-    "Drive with DriveX: flexible hours, clear Trip history, earnings visibility, and document workflows for Drivers.",
+    "Drive with DriverDosth: flexible hours, clear Trip history, earnings visibility, and document workflows for Drivers.",
   path: publicRoutes.driveWithUs,
 });
 

@@ -1,8 +1,8 @@
-# DriveX Mock Server
+# DriverDosth Mock Server
 
 JSON Server–based mock backend.
 
-**Domain note:** DriveX is a driver-booking platform. Seed data uses
+**Domain note:** DriverDosth is a driver-booking platform. Seed data uses
 `userVehicles` owned by Users. Drivers do not own vehicles. Bookings and trips
 store `userVehicleId`.
 
@@ -71,7 +71,7 @@ GET /api/raw/*
 When multiple drivers are `ONLINE` + `VERIFIED`, the mock prefers seeded
 `driver-2` so demos and Playwright e2e stay deterministic.
 
-**This is mock-server behavior only.** It is not DriveX product logic and must
+**This is mock-server behavior only.** It is not DriverDosth product logic and must
 not be carried into a real backend. Production dispatch/matching belongs to the
 real service layer.
 

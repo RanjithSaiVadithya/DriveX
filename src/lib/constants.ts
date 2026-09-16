@@ -21,7 +21,7 @@ export const VEHICLE_TYPES = {
 
 export const MOCK_OTP = "123456";
 
-export const SESSION_STORAGE_KEY = "drivex_session";
+export const SESSION_STORAGE_KEY = "driverdosth_session";
 
 export const API_TIMEOUT_MS = 15_000;
 

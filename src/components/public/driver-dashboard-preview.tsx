@@ -16,7 +16,7 @@ export function DriverDashboardPreview({ className }: { className?: string }) {
         className,
       )}
       role="img"
-      aria-label="DriveX Driver dashboard showing online status, a Trip request, and earnings"
+      aria-label="DriverDosth Driver dashboard showing online status, a Trip request, and earnings"
     >
       <div className="bg-olive/25 pointer-events-none absolute -top-24 -right-16 size-64 rounded-full blur-3xl" />
       <div className="relative">

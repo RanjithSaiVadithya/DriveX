@@ -8,7 +8,7 @@ interface BeforeInstallPromptEvent extends Event {
   userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
 }
 
-const DISMISS_KEY = "drivex-install-dismissed-at";
+const DISMISS_KEY = "driverdosth-install-dismissed-at";
 const DISMISS_DAYS = 14;
 
 function isStandaloneDisplay(): boolean {

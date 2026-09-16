@@ -1,11 +1,11 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("Phase 5 PWA & responsive", () => {
-  test("manifest is available with DriveX branding", async ({ request }) => {
+  test("manifest is available with DriverDosth branding", async ({ request }) => {
     const res = await request.get("/manifest.webmanifest");
     expect(res.ok()).toBeTruthy();
     const body = await res.json();
-    expect(body.name).toBe("DriveX");
+    expect(body.name).toBe("DriverDosth");
     expect(body.display).toBe("standalone");
     expect(body.icons?.length).toBeGreaterThan(0);
   });

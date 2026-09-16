@@ -1,8 +1,8 @@
 import { test, expect } from "@playwright/test";
 
-test("homepage is crawlable with DriveX branding", async ({ page }) => {
+test("homepage is crawlable with DriverDosth branding", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("link", { name: "DriveX" }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: "DriverDosth" }).first()).toBeVisible();
   const icons = page.locator('link[rel="icon"], link[rel="shortcut icon"]');
   await expect(icons.first()).toBeAttached();
 });

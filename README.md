@@ -1,6 +1,6 @@
-# DriveX
+# DriverDosth
 
-DriveX is a **driver-booking platform**. Users provide their own vehicles.
+DriverDosth is a **driver-booking platform**. Users provide their own vehicles.
 Drivers provide the driving service.
 
 ```text
@@ -13,7 +13,7 @@ DRIVER PROVIDES DRIVING SERVICE
 TRIP
 ```
 
-DriveX is one platform with three experiences (Public, User, Driver) sharing a
+DriverDosth is one platform with three experiences (Public, User, Driver) sharing a
 single domain model and API contract. A booking/trip is never duplicated into
 separate unrelated User and Driver records.
 
@@ -22,7 +22,7 @@ There is **no** driver-owned vehicle inventory and **no** vehicle rental.
 ## Architecture
 
 ```text
-                         DriveX
+                         DriverDosth
                            |
           +----------------+----------------+
           |                |                |
