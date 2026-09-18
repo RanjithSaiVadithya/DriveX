@@ -1,13 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import { cva, type VariantProps } from "class-variance-authority";
+import { DriverDosthMark } from "@/components/shared/driver-dosth-mark";
 import { cn } from "@/lib/utils";
 import { publicRoutes } from "@/config/routes";
 import { siteConfig } from "@/config/site";
-
-const LOGO_ICON = "/driverdosth.png";
-const LOGO_ICON_WIDTH = 1254;
-const LOGO_ICON_HEIGHT = 1254;
 
 const logoVariants = cva("inline-flex min-w-0 max-w-full items-center", {
   variants: {
@@ -52,21 +48,25 @@ const wordmarkColorClasses = {
     driver: "text-deep-navy",
     dosth: "text-olive",
     tagline: "text-muted-foreground",
+    mark: "text-[#003058] [--logo-accent:#10a828]",
   },
   dark: {
     driver: "text-deep-navy",
     dosth: "text-olive",
     tagline: "text-muted-foreground",
+    mark: "text-[#003058] [--logo-accent:#10a828]",
   },
   compact: {
     driver: "text-deep-navy",
     dosth: "text-olive",
     tagline: "text-muted-foreground",
+    mark: "text-[#003058] [--logo-accent:#10a828]",
   },
   light: {
     driver: "text-warm-white",
     dosth: "text-[#7ec876]",
     tagline: "text-white/60",
+    mark: "text-warm-white [--logo-accent:#7ec876]",
   },
 } as const;
 
@@ -75,6 +75,12 @@ interface DriverDosthLogoProps extends VariantProps<typeof logoVariants> {
   href?: string;
   asLink?: boolean;
   showTagline?: boolean;
+  /** Override mark primary color (D / driver / road). */
+  markPrimary?: string;
+  /** Override mark accent color (passenger). */
+  markAccent?: string;
+  /** Extra classes on the SVG mark (e.g. `text-deep-navy [--logo-accent:var(--olive)]`). */
+  markClassName?: string;
 }
 
 export function DriverDosthLogo({
@@ -84,6 +90,9 @@ export function DriverDosthLogo({
   href = publicRoutes.home,
   asLink = true,
   showTagline = true,
+  markPrimary,
+  markAccent,
+  markClassName,
 }: DriverDosthLogoProps) {
   const resolvedSize = size ?? "md";
   const resolvedVariant = variant ?? "default";
@@ -96,17 +105,14 @@ export function DriverDosthLogo({
         className,
       )}
     >
-      <Image
-        src={LOGO_ICON}
-        alt=""
-        width={LOGO_ICON_WIDTH}
-        height={LOGO_ICON_HEIGHT}
-        sizes="(max-width: 640px) 40px, (max-width: 1024px) 48px, 56px"
+      <DriverDosthMark
+        primary={markPrimary}
+        accent={markAccent}
         className={cn(
           iconSizeClasses[resolvedSize],
-          "shrink-0 object-contain",
+          colors.mark,
+          markClassName,
         )}
-        priority
       />
       <span className="flex min-w-0 shrink-0 flex-col justify-center leading-none">
         <span
